@@ -4,6 +4,9 @@
 
 This repository contains a modern, full-stack web application for JackOfAI.com, a personal brand website for a Melbourne-based AI entrepreneur. The application showcases professional services, thought leadership, and provides contact functionality for potential collaborators and investors.
 
+**Domain**: jackofai.com  
+**Production URL**: https://jackofai.com
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
