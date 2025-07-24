@@ -39,7 +39,7 @@ export default function Hero() {
           </p>
           
           <p className="text-lg text-slate-600 mb-10 max-w-3xl mx-auto">
-            Based in Melbourne, Australia, I specialize in discovering, validating, and launching innovative AI products. With an <em>idea-first</em> approach, I combine cross-domain expertise, rapid prototyping, and a strong network to bring bold AI solutions to life.
+            Based in Colorado, I specialize in discovering, validating, and launching innovative AI products. With an <em>idea-first</em> approach, I combine cross-domain expertise, rapid prototyping, and a strong network to bring bold AI solutions to life.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

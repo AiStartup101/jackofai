@@ -15,12 +15,12 @@ export default function Community() {
     {
       icon: Users,
       title: "Advisory Board",
-      description: "Supported by experienced technical and investment advisors from the Australian ecosystem."
+      description: "Supported by experienced technical and investment advisors from the Colorado tech ecosystem."
     },
     {
       icon: Briefcase,
       title: "Partnerships",
-      description: "Collaborations with accelerators, universities, and the Australian startup community."
+      description: "Collaborations with accelerators, universities, and the Colorado startup community."
     }
   ];
 
@@ -49,7 +49,7 @@ export default function Community() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-secondary mb-4">Community & Ecosystem</h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Building a thriving network of AI innovators, developers, and investors in Melbourne and beyond.
+            Building a thriving network of AI innovators, developers, and investors in Colorado and beyond.
           </p>
         </div>
         

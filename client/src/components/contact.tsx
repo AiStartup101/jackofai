@@ -254,7 +254,7 @@ export default function Contact() {
                 </Button>
               </form>
               
-              <p className="text-xs text-blue-200 mt-4">No spam, unsubscribe anytime. Based in Melbourne, Australia.</p>
+              <p className="text-xs text-blue-200 mt-4">No spam, unsubscribe anytime. Based in Colorado.</p>
             </div>
           </div>
         </div>
