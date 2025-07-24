@@ -1,4 +1,11 @@
 .idea/
 *.iml
 .DS_Store
+node_modules
+dist
+server/public
+vite.config.ts.*
+*.tar.gz
+
+
 
