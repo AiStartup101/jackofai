@@ -4,7 +4,6 @@ import About from "@/components/about";
 import Services from "@/components/services";
 import Insights from "@/components/insights";
 import Community from "@/components/community";
-import Government from "@/components/government";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 
@@ -17,7 +16,6 @@ export default function Home() {
       <Services />
       <Insights />
       <Community />
-      <Government />
       <Contact />
       <Footer />
     </div>

@@ -61,12 +61,6 @@ export default function Navigation() {
               >
                 Community
               </button>
-              <button 
-                onClick={() => scrollToSection('government')}
-                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
-              >
-                Programs
-              </button>
               <Button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-primary text-white hover:bg-primary/90"
@@ -118,12 +112,6 @@ export default function Navigation() {
               className="text-slate-600 dark:text-slate-300 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
             >
               Community
-            </button>
-            <button 
-              onClick={() => scrollToSection('government')}
-              className="text-slate-600 dark:text-slate-300 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
-            >
-              Programs
             </button>
             <Button 
               onClick={() => scrollToSection('contact')}
