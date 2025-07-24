@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200 z-50">
+    <nav className="fixed top-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -56,9 +57,15 @@ export default function Navigation() {
               </button>
               <button 
                 onClick={() => scrollToSection('community')}
-                className="text-slate-600 hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
                 Community
+              </button>
+              <button 
+                onClick={() => scrollToSection('government')}
+                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+              >
+                Programs
               </button>
               <Button 
                 onClick={() => scrollToSection('contact')}
@@ -66,6 +73,7 @@ export default function Navigation() {
               >
                 Contact
               </Button>
+              <ThemeToggle />
             </div>
           </div>
           
@@ -107,9 +115,15 @@ export default function Navigation() {
             </button>
             <button 
               onClick={() => scrollToSection('community')}
-              className="text-slate-600 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
+              className="text-slate-600 dark:text-slate-300 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
             >
               Community
+            </button>
+            <button 
+              onClick={() => scrollToSection('government')}
+              className="text-slate-600 dark:text-slate-300 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
+            >
+              Programs
             </button>
             <Button 
               onClick={() => scrollToSection('contact')}
