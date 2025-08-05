@@ -25,6 +25,11 @@ This repository contains a modern, full-stack web application for JackOfAI.com, 
 
 Preferred communication style: Simple, everyday language.
 
+**Additional Preferences:**
+- Interested in extracting development terminology for better AI prompting
+- Values transparency about mock data vs real data sources
+- Focuses on production-ready architecture with clear setup documentation
+
 ## System Architecture
 
 The application follows a full-stack TypeScript architecture with a clear separation between client and server code:
