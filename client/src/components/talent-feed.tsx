@@ -2,8 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Linkedin, Twitter, MapPin, Building, Star } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Twitter, MapPin, Building, Star, Filter } from "lucide-react";
+import { useState } from "react";
 import type { Talent, Opportunity } from "@shared/schema";
+import AnalyticsDashboard from "./analytics-dashboard";
 
 interface TalentCardProps {
   talent: Talent;
@@ -174,6 +176,10 @@ function OpportunityCard({ opportunity }: OpportunityCardProps) {
 }
 
 export default function TalentFeed() {
+  const [selectedCity, setSelectedCity] = useState<string>('');
+  const [selectedSkill, setSelectedSkill] = useState<string>('');
+  const [showAnalytics, setShowAnalytics] = useState(false);
+
   const { data: talentsData, isLoading: talentsLoading } = useQuery({
     queryKey: ['/api/talents'],
     refetchInterval: 60000, // Refresh every minute
@@ -186,6 +192,9 @@ export default function TalentFeed() {
 
   const talents: Talent[] = (talentsData as any)?.talents || [];
   const opportunities: Opportunity[] = (opportunitiesData as any)?.opportunities || [];
+
+  const indianCities = ['Bangalore', 'Hyderabad', 'Pune', 'Gurgaon', 'Mumbai', 'Chennai'];
+  const topSkills = ['TensorFlow', 'PyTorch', 'Machine Learning', 'Computer Vision', 'NLP', 'Deep Learning'];
 
   if (talentsLoading && opportunitiesLoading) {
     return (
@@ -218,25 +227,80 @@ export default function TalentFeed() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-            🚀 Live Talent & Opportunity Feed
+            🇮🇳 AI-Powered Indian Talent Scouting
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-            AI-powered discovery of high-potential founders, developers, and opportunities. 
-            Updated in real-time based on market signals and activity.
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-4xl mx-auto">
+            Advanced talent discovery system targeting Bangalore, Hyderabad, Pune, and Gurgaon. 
+            Leveraging LinkedIn API, freelance platforms, and AI communities for comprehensive talent intelligence.
           </p>
+          
+          {/* Analytics Toggle */}
+          <div className="mt-6">
+            <Button 
+              onClick={() => setShowAnalytics(!showAnalytics)}
+              variant={showAnalytics ? "default" : "outline"}
+              className="mr-4"
+            >
+              {showAnalytics ? 'Hide Analytics' : 'Show Analytics'}
+            </Button>
+            
+            {/* City Filter */}
+            <select 
+              value={selectedCity} 
+              onChange={(e) => setSelectedCity(e.target.value)}
+              className="mr-4 px-3 py-2 border rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+            >
+              <option value="">All Cities</option>
+              {indianCities.map(city => (
+                <option key={city} value={city}>{city}</option>
+              ))}
+            </select>
+
+            {/* Skill Filter */}
+            <select 
+              value={selectedSkill} 
+              onChange={(e) => setSelectedSkill(e.target.value)}
+              className="px-3 py-2 border rounded-lg bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+            >
+              <option value="">All Skills</option>
+              {topSkills.map(skill => (
+                <option key={skill} value={skill}>{skill}</option>
+              ))}
+            </select>
+          </div>
         </div>
+
+        {/* Analytics Dashboard */}
+        {showAnalytics && <AnalyticsDashboard />}
 
         {/* Talent Section */}
         {talents.length > 0 && (
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-              🎯 Top Talent Discoveries
+              🎯 Indian AI Talent Discoveries
               <Badge className="ml-3 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
-                {talents.length} Active
+                {talents.filter(t => t.location?.includes('India')).length} from India
+              </Badge>
+              <Badge className="ml-2 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                {talents.length} Total
               </Badge>
             </h3>
+            
+            {/* Source Breakdown */}
+            <div className="mb-6 flex flex-wrap gap-2">
+              <Badge variant="outline" className="text-xs">
+                LinkedIn API: {talents.filter(t => t.source?.includes('linkedin')).length}
+              </Badge>
+              <Badge variant="outline" className="text-xs">
+                Freelance Platforms: {talents.filter(t => t.source?.includes('upwork') || t.source?.includes('toptal')).length}
+              </Badge>
+              <Badge variant="outline" className="text-xs">
+                AI Communities: {talents.filter(t => t.source?.includes('community')).length}
+              </Badge>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {talents.slice(0, 6).map((talent: Talent) => (
+              {talents.slice(0, 9).map((talent: Talent) => (
                 <TalentCard key={talent.id} talent={talent} />
               ))}
             </div>
@@ -263,10 +327,48 @@ export default function TalentFeed() {
         {talents.length === 0 && opportunities.length === 0 && (
           <div className="text-center py-12">
             <p className="text-slate-600 dark:text-slate-400">
-              🔍 AI talent scout is initializing... Check back in a few moments for live discoveries!
+              🔍 Advanced AI talent scout is initializing across Indian tech hubs... 
+              <br />Connecting to LinkedIn API, freelance platforms, and AI communities...
             </p>
           </div>
         )}
+        
+        {/* Technology Stack Info */}
+        <div className="mt-16 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 rounded-xl p-8">
+          <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+            🛠️ Advanced Scouting Technology
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <Linkedin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              </div>
+              <h5 className="font-semibold text-slate-900 dark:text-white">LinkedIn Integration</h5>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Advanced search filters for AI roles in Indian cities</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <Building className="w-6 h-6 text-green-600 dark:text-green-400" />
+              </div>
+              <h5 className="font-semibold text-slate-900 dark:text-white">Freelance Platforms</h5>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Upwork, Toptal, Freelancer.com talent discovery</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <Github className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+              </div>
+              <h5 className="font-semibold text-slate-900 dark:text-white">AI Communities</h5>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Reddit, Kaggle, Analytics Vidhya monitoring</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                <Star className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+              </div>
+              <h5 className="font-semibold text-slate-900 dark:text-white">AI Scoring</h5>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Machine learning-based talent ranking system</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

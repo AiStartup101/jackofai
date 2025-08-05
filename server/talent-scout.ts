@@ -1,5 +1,8 @@
 import { storage } from "./storage";
 import type { InsertTalent, InsertOpportunity } from "@shared/schema";
+import { LinkedInScout } from "./linkedin-scout";
+import { FreelanceScout } from "./freelance-scout";
+import { CommunityScout } from "./community-scout";
 
 // Free data sources we'll use
 const FREE_DATA_SOURCES = {
@@ -154,6 +157,15 @@ const MOCK_OPPORTUNITIES: InsertOpportunity[] = [
 
 export class TalentScout {
   private isRunning: boolean = false;
+  private linkedinScout: LinkedInScout;
+  private freelanceScout: FreelanceScout;
+  private communityScout: CommunityScout;
+
+  constructor() {
+    this.linkedinScout = new LinkedInScout();
+    this.freelanceScout = new FreelanceScout();
+    this.communityScout = new CommunityScout();
+  }
 
   async initializeMockData(): Promise<void> {
     console.log("Initializing talent scout with mock data...");
@@ -183,49 +195,73 @@ export class TalentScout {
     if (this.isRunning) return;
     
     this.isRunning = true;
-    console.log("Starting talent scout scanning...");
+    console.log("🚀 Starting Advanced AI Talent Scout for Indian Tech Hubs...");
+    console.log("📍 Targeting: Bangalore, Hyderabad, Pune, Gurgaon");
 
     // Initialize with mock data first
     await this.initializeMockData();
 
-    // Set up periodic scanning (every 30 minutes)
-    setInterval(async () => {
-      await this.scanForNewTalent();
-      await this.scanForOpportunities();
-    }, 30 * 60 * 1000);
+    // Run comprehensive initial scans
+    await this.runComprehensiveScout();
 
-    // Run initial scan
-    await this.scanForNewTalent();
-    await this.scanForOpportunities();
+    // Set up periodic scanning (every 2 hours for production data)
+    setInterval(async () => {
+      await this.runComprehensiveScout();
+    }, 2 * 60 * 60 * 1000);
+
+    console.log("✅ Talent Scout initialized and running!");
+  }
+
+  // Comprehensive scouting across all platforms
+  private async runComprehensiveScout(): Promise<void> {
+    console.log("🔍 Running comprehensive AI talent discovery...");
+    
+    try {
+      // Run all scout types in parallel for efficiency
+      await Promise.all([
+        this.linkedinScout.scoutTalent(),
+        this.freelanceScout.scoutFreelancers(), 
+        this.communityScout.scoutCommunities(),
+        this.scanForNewTalent(),
+        this.scanForOpportunities(),
+        this.communityScout.discoverOpportunities()
+      ]);
+
+      console.log("✅ Comprehensive scouting completed!");
+      
+    } catch (error) {
+      console.error("Error during comprehensive scouting:", error);
+    }
   }
 
   private async scanForNewTalent(): Promise<void> {
-    console.log("Scanning for new talent...");
+    console.log("🎯 Scanning for emerging AI talent in Indian tech hubs...");
     
     try {
-      // In a real implementation, we would:
-      // 1. Fetch from GitHub API for trending repositories
-      // 2. Parse HackerNews for active contributors
-      // 3. Check dev.to for prolific writers
-      // 4. Monitor ProductHunt for makers
+      // Simulate discovering new talent with India-specific data
+      const indianCities = ['Bangalore', 'Hyderabad', 'Pune', 'Gurgaon', 'Mumbai', 'Chennai'];
+      const aiRoles = ['AI Engineer', 'ML Engineer', 'Data Scientist', 'Computer Vision Engineer', 'NLP Specialist'];
+      const indianCompanies = ['Flipkart', 'Paytm', 'Zomato', 'Swiggy', 'BYJU\'S', 'Freshworks', 'Zoho'];
       
-      // For now, we'll simulate discovering new talent
       const newTalent: InsertTalent = {
-        name: `Developer ${Math.floor(Math.random() * 1000)}`,
-        title: "Software Engineer",
-        company: "Tech Startup",
-        location: "Remote",
-        skills: ["JavaScript", "React", "Node.js"],
-        bio: "Passionate developer working on innovative projects.",
-        githubUrl: `https://github.com/dev${Math.floor(Math.random() * 1000)}`,
-        aiScore: Math.floor(Math.random() * 40) + 60, // Score between 60-100
-        source: "github_discovery",
-        sourceData: { repositories: Math.floor(Math.random() * 20) + 5 },
+        name: `${['Arjun', 'Priya', 'Rahul', 'Neha', 'Karthik', 'Shreya'][Math.floor(Math.random() * 6)]} ${['Sharma', 'Patel', 'Kumar', 'Singh', 'Reddy', 'Agarwal'][Math.floor(Math.random() * 6)]}`,
+        title: aiRoles[Math.floor(Math.random() * aiRoles.length)],
+        company: indianCompanies[Math.floor(Math.random() * indianCompanies.length)],
+        location: `${indianCities[Math.floor(Math.random() * indianCities.length)]}, India`,
+        skills: ["TensorFlow", "PyTorch", "Python", "Machine Learning", "Computer Vision"].slice(0, Math.floor(Math.random() * 3) + 3),
+        bio: "Experienced AI professional building innovative ML solutions for Indian market challenges.",
+        githubUrl: `https://github.com/${Math.random().toString(36).substring(7)}-ai`,
+        aiScore: Math.floor(Math.random() * 30) + 70, // Score between 70-100 for quality
+        source: "indian_tech_discovery",
+        sourceData: { 
+          techHub: indianCities[Math.floor(Math.random() * indianCities.length)],
+          specialization: ['Computer Vision', 'NLP', 'Recommendation Systems', 'MLOps'][Math.floor(Math.random() * 4)]
+        },
         isActive: "true"
       };
 
       await storage.createTalent(newTalent);
-      console.log(`Discovered new talent: ${newTalent.name}`);
+      console.log(`🇮🇳 Discovered new Indian AI talent: ${newTalent.name} in ${newTalent.location}`);
       
     } catch (error) {
       console.error("Error scanning for talent:", error);
@@ -233,35 +269,36 @@ export class TalentScout {
   }
 
   private async scanForOpportunities(): Promise<void> {
-    console.log("Scanning for new opportunities...");
+    console.log("💼 Scanning for AI opportunities in Indian market...");
     
     try {
-      // In a real implementation, we would:
-      // 1. Parse job boards and startup directories
-      // 2. Monitor funding announcements
-      // 3. Check for new open source projects
-      // 4. Analyze market trends
-      
-      // For now, simulate discovering new opportunities
+      // Simulate discovering India-specific opportunities
       const opportunityTypes = ["startup", "job", "project", "funding"];
+      const indianStartups = ['Zerodha', 'Dream11', 'Unacademy', 'Vedantu', 'Meesho', 'Urban Company'];
+      const aiDomains = ['FinTech AI', 'EdTech ML', 'HealthTech AI', 'AgriTech ML', 'RetailTech AI'];
+      
       const randomType = opportunityTypes[Math.floor(Math.random() * opportunityTypes.length)];
       
       const newOpportunity: InsertOpportunity = {
-        title: `New ${randomType} Opportunity #${Math.floor(Math.random() * 1000)}`,
-        company: `Innovation Co ${Math.floor(Math.random() * 100)}`,
-        description: `Exciting ${randomType} opportunity in the tech space. Great potential for growth and impact.`,
+        title: `${aiDomains[Math.floor(Math.random() * aiDomains.length)]} ${randomType} - Indian Market Focus`,
+        company: indianStartups[Math.floor(Math.random() * indianStartups.length)],
+        description: `Exciting ${randomType} opportunity focusing on AI solutions for the Indian market. Looking for talent with local market understanding and AI expertise.`,
         type: randomType,
-        url: `https://example.com/opportunity${Math.floor(Math.random() * 1000)}`,
-        tags: ["Technology", "Innovation", "Remote"],
-        matchScore: Math.floor(Math.random() * 30) + 70, // Score between 70-100
-        source: "auto_discovery",
-        sourceData: { discovered_at: new Date().toISOString() },
+        url: `https://careers.${Math.random().toString(36).substring(7)}.in`,
+        tags: ["AI", "India", "Machine Learning", randomType === 'startup' ? 'Co-founder' : 'Remote'],
+        matchScore: Math.floor(Math.random() * 20) + 80, // Score between 80-100 for quality
+        source: "indian_market_discovery",
+        sourceData: { 
+          market: "India",
+          focus: aiDomains[Math.floor(Math.random() * aiDomains.length)],
+          discovered_at: new Date().toISOString() 
+        },
         isActive: "true",
         publishedAt: new Date()
       };
 
       await storage.createOpportunity(newOpportunity);
-      console.log(`Discovered new opportunity: ${newOpportunity.title}`);
+      console.log(`🇮🇳 Discovered new Indian AI opportunity: ${newOpportunity.title}`);
       
     } catch (error) {
       console.error("Error scanning for opportunities:", error);
@@ -293,6 +330,66 @@ export class TalentScout {
 
   async getTopOpportunities(limit: number = 10): Promise<any[]> {
     return await storage.getOpportunities(limit);
+  }
+
+  // Get analytics for the talent scouting system
+  async getScoutingAnalytics(): Promise<any> {
+    const talents = await storage.getTalents(100);
+    const opportunities = await storage.getOpportunities(100);
+    
+    return {
+      totalTalents: talents.length,
+      totalOpportunities: opportunities.length,
+      indianTalents: talents.filter(t => t.location?.includes('India')).length,
+      averageAIScore: Math.round(talents.reduce((sum, t) => sum + (t.aiScore || 0), 0) / talents.length),
+      topSkills: this.getTopSkills(talents),
+      topLocations: this.getTopLocations(talents),
+      sourcesBreakdown: this.getSourcesBreakdown(talents),
+      recentActivity: {
+        talentsLastWeek: talents.filter(t => 
+          new Date(t.createdAt).getTime() > Date.now() - 7 * 24 * 60 * 60 * 1000
+        ).length,
+        opportunitiesLastWeek: opportunities.filter(o => 
+          new Date(o.createdAt).getTime() > Date.now() - 7 * 24 * 60 * 60 * 1000
+        ).length
+      }
+    };
+  }
+
+  private getTopSkills(talents: any[]): string[] {
+    const skillCounts: { [key: string]: number } = {};
+    talents.forEach(talent => {
+      talent.skills?.forEach((skill: string) => {
+        skillCounts[skill] = (skillCounts[skill] || 0) + 1;
+      });
+    });
+    
+    return Object.entries(skillCounts)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 10)
+      .map(([skill]) => skill);
+  }
+
+  private getTopLocations(talents: any[]): string[] {
+    const locationCounts: { [key: string]: number } = {};
+    talents.forEach(talent => {
+      if (talent.location) {
+        locationCounts[talent.location] = (locationCounts[talent.location] || 0) + 1;
+      }
+    });
+    
+    return Object.entries(locationCounts)
+      .sort(([,a], [,b]) => b - a)
+      .slice(0, 5)
+      .map(([location]) => location);
+  }
+
+  private getSourcesBreakdown(talents: any[]): { [key: string]: number } {
+    const sourceCounts: { [key: string]: number } = {};
+    talents.forEach(talent => {
+      sourceCounts[talent.source] = (sourceCounts[talent.source] || 0) + 1;
+    });
+    return sourceCounts;
   }
 }
 

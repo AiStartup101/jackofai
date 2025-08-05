@@ -36,6 +36,59 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Analytics endpoint
+  app.get("/api/scout/analytics", async (req, res) => {
+    try {
+      const analytics = await talentScout.getScoutingAnalytics();
+      res.json({ success: true, analytics });
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch analytics" 
+      });
+    }
+  });
+
+  // Filter talents by location
+  app.get("/api/talents/location/:location", async (req, res) => {
+    try {
+      const location = req.params.location;
+      const limit = parseInt(req.query.limit as string) || 20;
+      const allTalents = await storage.getTalents(100);
+      const filteredTalents = allTalents
+        .filter(talent => talent.location?.toLowerCase().includes(location.toLowerCase()))
+        .slice(0, limit);
+      
+      res.json({ success: true, talents: filteredTalents, count: filteredTalents.length });
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch talents by location" 
+      });
+    }
+  });
+
+  // Filter talents by skill
+  app.get("/api/talents/skill/:skill", async (req, res) => {
+    try {
+      const skill = req.params.skill;
+      const limit = parseInt(req.query.limit as string) || 20;
+      const allTalents = await storage.getTalents(100);
+      const filteredTalents = allTalents
+        .filter(talent => 
+          talent.skills?.some(s => s.toLowerCase().includes(skill.toLowerCase()))
+        )
+        .slice(0, limit);
+      
+      res.json({ success: true, talents: filteredTalents, count: filteredTalents.length });
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch talents by skill" 
+      });
+    }
+  });
+
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {
