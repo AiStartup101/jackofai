@@ -2,9 +2,40 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema, insertNewsletterSchema } from "@shared/schema";
+import { talentScout } from "./talent-scout";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Initialize talent scout
+  await talentScout.startScanning();
+
+  // Talent Scout API endpoints
+  app.get("/api/talents", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const talents = await storage.getTalents(limit);
+      res.json({ success: true, talents });
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch talents" 
+      });
+    }
+  });
+
+  app.get("/api/opportunities", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const opportunities = await storage.getOpportunities(limit);
+      res.json({ success: true, opportunities });
+    } catch (error) {
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to fetch opportunities" 
+      });
+    }
+  });
+
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {

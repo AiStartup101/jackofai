@@ -50,6 +50,12 @@ export default function Navigation() {
                 Services
               </button>
               <button 
+                onClick={() => scrollToSection('talent-feed')}
+                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+              >
+                Talent Scout
+              </button>
+              <button 
                 onClick={() => scrollToSection('insights')}
                 className="text-slate-600 hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
               >
@@ -100,6 +106,12 @@ export default function Navigation() {
               className="text-slate-600 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
             >
               Services
+            </button>
+            <button 
+              onClick={() => scrollToSection('talent-feed')}
+              className="text-slate-600 dark:text-slate-300 hover:text-primary block px-3 py-2 text-base font-medium w-full text-left"
+            >
+              Talent Scout
             </button>
             <button 
               onClick={() => scrollToSection('insights')}
