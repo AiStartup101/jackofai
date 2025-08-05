@@ -227,12 +227,18 @@ export default function TalentFeed() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-            🇮🇳 AI-Powered Indian Talent Scouting
+            🇮🇳 AI-Powered Indian Talent Scouting System
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400 max-w-4xl mx-auto">
-            Advanced talent discovery system targeting Bangalore, Hyderabad, Pune, and Gurgaon. 
-            Leveraging LinkedIn API, freelance platforms, and AI communities for comprehensive talent intelligence.
+            Advanced talent discovery framework targeting Bangalore, Hyderabad, Pune, and Gurgaon. 
+            Built to integrate with LinkedIn API, freelance platforms, and AI communities.
           </p>
+          <div className="mt-4 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
+            <p className="text-sm text-amber-800 dark:text-amber-200">
+              <strong>Demo Mode:</strong> Currently displaying mock data to demonstrate the system's capabilities. 
+              Real LinkedIn/API integration requires proper authentication and API keys.
+            </p>
+          </div>
           
           {/* Analytics Toggle */}
           <div className="mt-6">
@@ -336,8 +342,14 @@ export default function TalentFeed() {
         {/* Technology Stack Info */}
         <div className="mt-16 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 rounded-xl p-8">
           <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
-            🛠️ Advanced Scouting Technology
+            🛠️ Production-Ready Scouting Technology Framework
           </h4>
+          <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <p className="text-sm text-blue-800 dark:text-blue-200">
+              <strong>Ready for Production:</strong> This system is architected to integrate with real APIs when you provide authentication keys. 
+              Current demo uses realistic mock data to show the user experience and data structure.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-3">

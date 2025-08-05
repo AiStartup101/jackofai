@@ -168,35 +168,37 @@ export class TalentScout {
   }
 
   async initializeMockData(): Promise<void> {
-    console.log("Initializing talent scout with mock data...");
+    console.log("🔧 DEMO MODE: Initializing with realistic mock data to demonstrate system capabilities");
+    console.log("💡 NOTE: Real LinkedIn/API integration requires authentication keys from user");
     
-    // Add mock talents
+    // Add mock talents for demonstration
     for (const talent of MOCK_TALENTS) {
       try {
         await storage.createTalent(talent);
       } catch (error) {
-        console.log("Talent already exists, skipping...");
+        console.log("Demo talent already exists, skipping...");
       }
     }
 
-    // Add mock opportunities  
+    // Add mock opportunities for demonstration
     for (const opportunity of MOCK_OPPORTUNITIES) {
       try {
         await storage.createOpportunity(opportunity);
       } catch (error) {
-        console.log("Opportunity already exists, skipping...");
+        console.log("Demo opportunity already exists, skipping...");
       }
     }
 
-    console.log("Mock data initialized successfully!");
+    console.log("✅ Demo data initialized - showing realistic talent profiles to demonstrate system value");
   }
 
   async startScanning(): Promise<void> {
     if (this.isRunning) return;
     
     this.isRunning = true;
-    console.log("🚀 Starting Advanced AI Talent Scout for Indian Tech Hubs...");
+    console.log("🚀 Starting Advanced AI Talent Scout Framework for Indian Tech Hubs...");
     console.log("📍 Targeting: Bangalore, Hyderabad, Pune, Gurgaon");
+    console.log("🔧 DEMO MODE: Using mock data - production requires LinkedIn/API authentication");
 
     // Initialize with mock data first
     await this.initializeMockData();

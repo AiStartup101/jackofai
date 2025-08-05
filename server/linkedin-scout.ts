@@ -71,10 +71,10 @@ export class LinkedInScout {
     };
   }
 
-  // Simulate LinkedIn search (real implementation would use LinkedIn API)
+  // DEMO: Simulate LinkedIn search (production would use real LinkedIn API)
   async searchProfiles(filters: any): Promise<any[]> {
-    // In production, this would make actual LinkedIn API calls
-    // For now, we'll return mock data that represents real profiles
+    // PRODUCTION NOTE: Replace with actual LinkedIn API calls using this.accessToken
+    // Current mock data demonstrates the expected data structure and user experience
     
     const mockProfiles = [
       {
