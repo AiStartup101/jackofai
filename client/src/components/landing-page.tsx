@@ -39,6 +39,7 @@ function SecondaryButton({
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isFounderChatOpen, setIsFounderChatOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
@@ -337,9 +338,18 @@ export default function LandingPage() {
               If you enjoy building small, beautiful things that matter — we'd
               love to hear from you.
             </p>
-            <SecondaryButton href="mailto:hello@jackofai.com?subject=Talent%20Network%20%2F%20Collaboration">
-              Join our talent network
-            </SecondaryButton>
+            <div className="flex flex-wrap gap-3">
+              <SecondaryButton href="mailto:hello@jackofai.com?subject=Talent%20Network%20%2F%20Collaboration">
+                Join our talent network
+              </SecondaryButton>
+              <button
+                onClick={() => setIsFounderChatOpen(true)}
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:bg-white/5 transition-colors"
+                data-testid="talent-chat-founder-btn"
+              >
+                Chat with the Founder
+              </button>
+            </div>
           </div>
         </section>
 
@@ -392,9 +402,18 @@ export default function LandingPage() {
               <li>• Product advisors</li>
               <li>• Creative technology leaders</li>
             </ul>
-            <PrimaryButton href="mailto:hello@jackofai.com?subject=Investor%20%2F%20Advisor%20Intro">
-              Request founder intro
-            </PrimaryButton>
+            <div className="flex flex-wrap gap-3">
+              <PrimaryButton href="mailto:hello@jackofai.com?subject=Investor%20%2F%20Advisor%20Intro">
+                Request founder intro
+              </PrimaryButton>
+              <button
+                onClick={() => setIsFounderChatOpen(true)}
+                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:bg-white/5 transition-colors"
+                data-testid="investor-chat-founder-btn"
+              >
+                Chat with the Founder
+              </button>
+            </div>
           </div>
         </section>
 
@@ -499,6 +518,85 @@ export default function LandingPage() {
       >
         💬 Chat on WhatsApp
       </a>
+
+      {isFounderChatOpen && (
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur-sm" data-testid="founder-chat-modal">
+          <div className="glass-card max-w-md w-full mx-4 p-6 space-y-4 relative">
+            <button
+              onClick={() => setIsFounderChatOpen(false)}
+              className="absolute right-4 top-4 text-slate-400 hover:text-slate-200 text-sm"
+              aria-label="Close founder chat"
+              data-testid="founder-chat-close-btn"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-lg font-semibold text-slate-100">
+              Chat with the founder
+            </h2>
+
+            <p className="text-sm text-slate-300">
+              Hi, I'm Bhavik. I started JackofAI™ to build simple, warm digital tools
+              that help people feel more connected. I'd love to hear who you are and
+              how you'd like to be involved — as a collaborator, early adopter, or
+              investor.
+            </p>
+
+            <div className="space-y-2 text-sm text-slate-100">
+              <p>
+                <span className="font-semibold">WhatsApp: </span>
+                <a
+                  href="https://wa.me/61426996009?text=Hi%20Bhavik%2C%20I%20just%20visited%20JackofAI.com%20and%20would%20love%20to%20connect."
+                  className="text-sky-300 hover:text-sky-200"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="founder-modal-whatsapp"
+                >
+                  Chat on WhatsApp
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold">Phone: </span>
+                <a
+                  href="tel:+61426996009"
+                  className="text-sky-300 hover:text-sky-200"
+                  data-testid="founder-modal-phone"
+                >
+                  +61 426 996 009
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold">Email: </span>
+                <a
+                  href="mailto:hello@jackofai.com?subject=JackofAI%20Founder%20Chat"
+                  className="text-sky-300 hover:text-sky-200"
+                  data-testid="founder-modal-email"
+                >
+                  hello@jackofai.com
+                </a>
+              </p>
+            </div>
+
+            <div className="pt-2 border-t border-white/10 mt-2">
+              <p className="text-xs text-slate-400">
+                Tip: When you reach out, feel free to mention whether you're a
+                developer, designer, early adopter, or investor, and what you'd like
+                to explore together.
+              </p>
+            </div>
+
+            <div className="flex justify-end pt-2">
+              <button
+                onClick={() => setIsFounderChatOpen(false)}
+                className="text-xs text-slate-400 hover:text-slate-200"
+                data-testid="founder-chat-close-text-btn"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

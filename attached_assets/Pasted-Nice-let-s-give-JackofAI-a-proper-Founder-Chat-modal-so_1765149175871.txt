@@ -1,0 +1,157 @@
+Nice, let’s give JackofAI™ a proper “Founder Chat” modal so people feel like they’re reaching you, not just a generic contact endpoint.
+
+Below is a Replit-ready prompt plus exact code snippets to plug into your existing app/page.tsx.
+
+⸻
+
+⭐ Replit Prompt — Add “Founder Chat” Modal to JackofAI Landing
+
+You can paste this whole thing into Replit AI:
+
+⸻
+
+Hi Replit,
+
+The JackofAI™ landing page is already set up in app/page.tsx.
+Now please add a “Founder Chat” modal that opens when the user clicks “Chat with the Founder”.
+
+Use these contact details:
+	•	Email: hello@jackofai.com
+	•	Phone (display): +61 426 996 009
+	•	Phone (link): tel:+61426996009
+	•	WhatsApp (with prefilled message):
+https://wa.me/61426996009?text=Hi%20Bhavik%2C%20I%20just%20visited%20JackofAI.com%20and%20would%20love%20to%20connect.
+
+1️⃣ Add modal state to HomePage
+
+In app/page.tsx, inside the HomePage component (right after export default function HomePage() {), add:
+
+const [isFounderChatOpen, setIsFounderChatOpen] = React.useState(false);
+
+
+⸻
+
+2️⃣ Create a “Chat with Founder” trigger button
+
+Wherever “Chat with the Founder” should appear (for example in the Contact section or Investors section), instead of using SecondaryButton with an href, add this button:
+
+<button
+  onClick={() => setIsFounderChatOpen(true)}
+  className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:bg-white/5 transition-colors"
+>
+  Chat with the Founder
+</button>
+
+You can keep other WhatsApp / email buttons as links — this one is just to open the modal.
+
+⸻
+
+3️⃣ Add the Founder Chat modal JSX
+
+At the bottom of the JSX returned by HomePage (but still inside <main>...</main>), add:
+
+{/* Founder Chat Modal */}
+{isFounderChatOpen && (
+  <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+    <div className="glass-card max-w-md w-full mx-4 p-6 space-y-4 relative">
+      {/* Close button */}
+      <button
+        onClick={() => setIsFounderChatOpen(false)}
+        className="absolute right-4 top-4 text-slate-400 hover:text-slate-200 text-sm"
+        aria-label="Close founder chat"
+      >
+        ✕
+      </button>
+
+      <h2 className="text-lg font-semibold text-slate-100">
+        Chat with the founder
+      </h2>
+
+      <p className="text-sm text-slate-300">
+        Hi, I&apos;m Bhavik. I started JackofAI™ to build simple, warm digital tools
+        that help people feel more connected. I&apos;d love to hear who you are and
+        how you&apos;d like to be involved — as a collaborator, early adopter, or
+        investor.
+      </p>
+
+      <div className="space-y-2 text-sm text-slate-100">
+        <p>
+          <span className="font-semibold">WhatsApp: </span>
+          <a
+            href="https://wa.me/61426996009?text=Hi%20Bhavik%2C%20I%20just%20visited%20JackofAI.com%20and%20would%20love%20to%20connect."
+            className="text-sky-300 hover:text-sky-200"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Chat on WhatsApp
+          </a>
+        </p>
+        <p>
+          <span className="font-semibold">Phone: </span>
+          <a
+            href="tel:+61426996009"
+            className="text-sky-300 hover:text-sky-200"
+          >
+            +61 426 996 009
+          </a>
+        </p>
+        <p>
+          <span className="font-semibold">Email: </span>
+          <a
+            href="mailto:hello@jackofai.com?subject=JackofAI%20Founder%20Chat"
+            className="text-sky-300 hover:text-sky-200"
+          >
+            hello@jackofai.com
+          </a>
+        </p>
+      </div>
+
+      <div className="pt-2 border-t border-white/10 mt-2">
+        <p className="text-xs text-slate-400">
+          Tip: When you reach out, feel free to mention whether you&apos;re a
+          developer, designer, early adopter, or investor, and what you&apos;d like
+          to explore together.
+        </p>
+      </div>
+
+      <div className="flex justify-end pt-2">
+        <button
+          onClick={() => setIsFounderChatOpen(false)}
+          className="text-xs text-slate-400 hover:text-slate-200"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+
+⸻
+
+4️⃣ Optional: Connect from multiple sections
+	•	In the Talent & Freelancers section, under the descriptive text, add the “Chat with the Founder” button.
+	•	In the Investors & Advisors section, add another “Chat with the Founder” button, also calling setIsFounderChatOpen(true).
+
+This makes it easy for all types of visitors to open the modal.
+
+⸻
+
+✅ Expected result
+	•	When a visitor clicks “Chat with the Founder”, the modal appears in the center of the screen.
+	•	Inside the modal, they can:
+	•	Open WhatsApp with a pre-filled intro message
+	•	Call you directly
+	•	Email you directly
+	•	The background dims and feels premium / on-brand.
+	•	They can close the modal with the ✕ button or “Close” button.
+
+Please implement these changes and fix any small TypeScript/JSX issues if they appear.
+
+Thank you!
+
+⸻
+
+If you’d like next, I can write:
+	•	A short WhatsApp intro script you can paste into replies
+	•	Or a Founder Notion intake template to track who messages you and why.
