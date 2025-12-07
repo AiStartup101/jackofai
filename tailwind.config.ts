@@ -5,6 +5,9 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Inter", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -13,6 +16,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        jack: {
+          bg: "#050816",
+          card: "rgba(15,23,42,0.85)",
+        },
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
@@ -61,6 +68,9 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+      },
+      boxShadow: {
+        "soft-glow": "0 0 40px rgba(56,189,248,0.35)",
       },
       keyframes: {
         "accordion-down": {
