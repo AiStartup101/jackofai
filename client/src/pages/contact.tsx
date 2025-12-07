@@ -33,14 +33,14 @@ export default function ContactPage() {
           </p>
           <p>
             <span className="font-semibold">Phone: </span>
-            <a href="tel:+61478661317" className="text-sky-300 hover:text-sky-200" data-testid="page-contact-phone">
-              +61 478 661 317
+            <a href="tel:+61426996009" className="text-sky-300 hover:text-sky-200" data-testid="page-contact-phone">
+              +61 426 996 009
             </a>
           </p>
           <p>
             <span className="font-semibold">WhatsApp: </span>
             <a
-              href="https://wa.me/61478661317"
+              href="https://wa.me/61426996009"
               className="text-sky-300 hover:text-sky-200"
               target="_blank"
               rel="noreferrer"
@@ -60,7 +60,7 @@ export default function ContactPage() {
             Email JackofAI
           </a>
           <a
-            href="https://wa.me/61478661317"
+            href="https://wa.me/61426996009"
             className="inline-flex items-center justify-center rounded-full bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 hover:bg-emerald-300 transition-colors"
             target="_blank"
             rel="noreferrer"
@@ -72,7 +72,7 @@ export default function ContactPage() {
       </div>
 
       <a
-        href="https://wa.me/61478661317"
+        href="https://wa.me/61426996009"
         className="fixed bottom-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-xs font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 hover:bg-emerald-300 transition-colors"
         aria-label="Chat on WhatsApp"
         target="_blank"

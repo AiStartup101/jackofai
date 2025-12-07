@@ -1,0 +1,119 @@
+Perfect — here is your updated Replit-ready instruction prompt using your correct phone + WhatsApp number:
+
+📞 Phone: +61 426 996 009
+
+📲 WhatsApp link: https://wa.me/61426996009
+
+Everything is updated below.
+
+⸻
+
+⭐ REPLIT PROMPT — Update Contact Details + WhatsApp (Correct Number)
+
+Hi Replit,
+
+Please update the JackofAI™ landing page with the correct phone number and WhatsApp integration.
+Use these EXACT details:
+
+⸻
+
+✅ 1. Contact Details to Use
+
+Email:
+
+hello@jackofai.com
+
+Phone (display):
+
++61 426 996 009
+
+Phone (tel link):
+
+tel:+61426996009
+
+WhatsApp link:
+
+https://wa.me/61426996009
+
+
+⸻
+
+✅ 2. Add Floating WhatsApp Button
+
+Inside app/page.tsx, near the bottom (before </main>), add:
+
+{/* Floating WhatsApp button */}
+<a
+  href="https://wa.me/61426996009"
+  className="fixed bottom-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-xs font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 hover:bg-emerald-300 transition-colors"
+  aria-label="Chat on WhatsApp"
+  target="_blank"
+  rel="noreferrer"
+>
+  💬 Chat on WhatsApp
+</a>
+
+
+⸻
+
+✅ 3. Update Contact Section on Homepage
+
+Wherever the Contact section appears, replace ANY previous number with:
+
+<p>
+  <span className="font-semibold">Phone: </span>
+  <a href="tel:+61426996009" className="text-sky-300 hover:text-sky-200">
+    +61 426 996 009
+  </a>
+</p>
+
+<p>
+  <span className="font-semibold">WhatsApp: </span>
+  <a
+    href="https://wa.me/61426996009"
+    className="text-sky-300 hover:text-sky-200"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Chat on WhatsApp
+  </a>
+</p>
+
+
+⸻
+
+✅ 4. Update the Dedicated /contact Page (if exists)
+
+Replace former contact info with:
+
+<a href="tel:+61426996009">+61 426 996 009</a>
+<a href="https://wa.me/61426996009">Chat on WhatsApp</a>
+
+
+⸻
+
+✅ 5. Update Footer Contact Link
+
+If footer shows a phone or WhatsApp link, replace with the new number and correct WhatsApp link.
+
+⸻
+
+📌 SUMMARY
+
+Please replace all old phone numbers and all outdated WhatsApp links with:
+	•	Phone: +61 426 996 009
+	•	Tel link: tel:+61426996009
+	•	WhatsApp: https://wa.me/61426996009
+
+Keep everything else exactly the same.
+
+Thank you!
+
+⸻
+
+If you’d like, I can also generate:
+✅ A WhatsApp auto-response template
+✅ A “Chat with Founder” button design
+✅ A sticky WhatsApp contact bar on mobile
+
+Just tell me!
