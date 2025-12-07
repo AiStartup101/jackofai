@@ -1,0 +1,190 @@
+Nice 😄 let’s wire in the WhatsApp presence properly.
+
+Since you like using Replit AI, I’ll give you:
+	1.	A Replit-ready prompt describing exactly what to do
+	2.	The code snippets Replit (or your dev) can drop in:
+	•	Floating WhatsApp button
+	•	Contact section on homepage
+	•	Simple /contact page
+
+You’ve already got the main landing page code in place, so this is just enhancements, not a rewrite.
+
+⸻
+
+1️⃣ Replit Prompt — Add Contact Section + Floating WhatsApp + Contact Page
+
+You can paste this straight into Replit AI:
+
+⸻
+
+REPLIT PROMPT — Add Phone + WhatsApp + Contact Page to JackofAI Landing
+
+Hi Replit,
+
+The new JackofAI™ landing page is already in place.
+Now please update it with:
+	•	A clear Contact section on the homepage
+	•	A floating WhatsApp button in the bottom-right corner
+	•	A simple Contact page at /contact
+
+Use these details:
+	•	Email: hello@jackofai.com
+	•	Phone (display): +61 478 661 317
+	•	Phone (link): tel:+61478661317
+	•	WhatsApp link: https://wa.me/61478661317
+
+1) Add floating WhatsApp button to app/page.tsx
+
+At the bottom of the HomePage component JSX (just before the final </main>), add:
+
+{/* Floating WhatsApp button */}
+<a
+  href="https://wa.me/61478661317"
+  className="fixed bottom-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-xs font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 hover:bg-emerald-300 transition-colors"
+  aria-label="Chat on WhatsApp"
+  target="_blank"
+  rel="noreferrer"
+>
+  💬 Chat on WhatsApp
+</a>
+
+Make sure it sits inside <main> but outside the .container so it floats on all pages.
+
+⸻
+
+2) Add a dedicated Contact section on the homepage
+
+In app/page.tsx, near the bottom (before the footer), add a new section:
+
+{/* CONTACT SECTION */}
+<section id="contact" className="space-y-4">
+  <h2 className="text-lg md:text-2xl font-semibold">
+    Contact
+  </h2>
+  <div className="glass-card p-6 md:p-7 space-y-3 text-sm text-slate-300">
+    <p>
+      For collaborations, talent opportunities, early access, or investor conversations,
+      you can reach JackofAI™ here:
+    </p>
+    <div className="space-y-1 text-slate-100">
+      <p>
+        <span className="font-semibold">Email: </span>
+        <a href="mailto:hello@jackofai.com" className="text-sky-300 hover:text-sky-200">
+          hello@jackofai.com
+        </a>
+      </p>
+      <p>
+        <span className="font-semibold">Phone: </span>
+        <a href="tel:+61478661317" className="text-sky-300 hover:text-sky-200">
+          +61 478 661 317
+        </a>
+      </p>
+      <p>
+        <span className="font-semibold">WhatsApp: </span>
+        <a
+          href="https://wa.me/61478661317"
+          className="text-sky-300 hover:text-sky-200"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Chat on WhatsApp
+        </a>
+      </p>
+    </div>
+    <div className="flex flex-wrap gap-3 pt-2">
+      <SecondaryButton href="mailto:hello@jackofai.com">
+        Email JackofAI
+      </SecondaryButton>
+      <SecondaryButton href="https://wa.me/61478661317">
+        Chat on WhatsApp
+      </SecondaryButton>
+    </div>
+  </div>
+</section>
+
+Also update the footer nav in page.tsx so the Contact link goes to this section:
+
+<a href="#contact" className="hover:text-sky-300">
+  Contact
+</a>
+
+
+⸻
+
+3) Add a simple /contact page
+
+Create a new file: app/contact/page.tsx with this content:
+
+import React from "react";
+
+export default function ContactPage() {
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="container py-12 md:py-16 space-y-6">
+        <h1 className="text-2xl md:text-3xl font-semibold">
+          Contact JackofAI<span className="align-super text-[10px]">™</span>
+        </h1>
+        <p className="max-w-xl text-sm md:text-base text-slate-300">
+          For collaborations, talent opportunities, early access, or investor conversations,
+          you can reach us using the details below.
+        </p>
+
+        <div className="glass-card p-6 md:p-7 space-y-3 text-sm text-slate-100">
+          <p>
+            <span className="font-semibold">Email: </span>
+            <a href="mailto:hello@jackofai.com" className="text-sky-300 hover:text-sky-200">
+              hello@jackofai.com
+            </a>
+          </p>
+          <p>
+            <span className="font-semibold">Phone: </span>
+            <a href="tel:+61478661317" className="text-sky-300 hover:text-sky-200">
+              +61 478 661 317
+            </a>
+          </p>
+          <p>
+            <span className="font-semibold">WhatsApp: </span>
+            <a
+              href="https://wa.me/61478661317"
+              className="text-sky-300 hover:text-sky-200"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Chat on WhatsApp
+            </a>
+          </p>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+OPTIONAL: If there is a top nav somewhere reusable, you can import it here. If not, this simple standalone page is fine.
+
+⸻
+
+4) Update any “Contact” links to point to /contact or #contact
+	•	In the footer or nav:
+	•	If you want a full page → use /contact
+	•	If you want to scroll on homepage → use #contact
+
+Either is okay; just be consistent.
+
+⸻
+
+Goal:
+After these changes:
+	•	There is a visible Contact section on the homepage
+	•	There is a floating WhatsApp button bottom-right
+	•	/contact opens a dedicated contact page
+	•	Email, phone and WhatsApp are properly wired to real JackofAI details
+
+Please implement and fix any small TypeScript/JSX errors if they appear.
+
+Thank you!
+
+⸻
+
+If you want, next I can help you:
+	•	Add a simple waitlist form (no backend, just mailto / form provider)
+	•	Or write a short “auto-reply” email template for early adopters / talent who contact you.

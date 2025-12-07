@@ -78,6 +78,9 @@ export default function LandingPage() {
             <a href="#founder" className="hover:text-sky-300">
               Founder
             </a>
+            <a href="#contact" className="hover:text-sky-300">
+              Contact
+            </a>
           </nav>
 
           <button
@@ -105,6 +108,9 @@ export default function LandingPage() {
             </a>
             <a href="#founder" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
               Founder
+            </a>
+            <a href="#contact" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
+              Contact
             </a>
           </nav>
         )}
@@ -415,6 +421,52 @@ export default function LandingPage() {
           </div>
         </section>
 
+        <section id="contact" className="space-y-4" data-testid="contact-section">
+          <h2 className="text-lg md:text-2xl font-semibold">
+            Contact
+          </h2>
+          <div className="glass-card p-6 md:p-7 space-y-3 text-sm text-slate-300">
+            <p>
+              For collaborations, talent opportunities, early access, or investor conversations,
+              you can reach JackofAI™ here:
+            </p>
+            <div className="space-y-1 text-slate-100">
+              <p>
+                <span className="font-semibold">Email: </span>
+                <a href="mailto:hello@jackofai.com" className="text-sky-300 hover:text-sky-200" data-testid="contact-email">
+                  hello@jackofai.com
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold">Phone: </span>
+                <a href="tel:+61478661317" className="text-sky-300 hover:text-sky-200" data-testid="contact-phone">
+                  +61 478 661 317
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold">WhatsApp: </span>
+                <a
+                  href="https://wa.me/61478661317"
+                  className="text-sky-300 hover:text-sky-200"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="contact-whatsapp"
+                >
+                  Chat on WhatsApp
+                </a>
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <SecondaryButton href="mailto:hello@jackofai.com">
+                Email JackofAI
+              </SecondaryButton>
+              <SecondaryButton href="https://wa.me/61478661317">
+                Chat on WhatsApp
+              </SecondaryButton>
+            </div>
+          </div>
+        </section>
+
         <footer className="border-t border-white/5 pt-6 pb-10 text-xs text-slate-500 flex flex-col md:flex-row md:items-center md:justify-between gap-3" data-testid="footer">
           <div>
             JackofAI<span className="align-super text-[8px]">™</span> ·{" "}
@@ -430,12 +482,23 @@ export default function LandingPage() {
             <a href="#talent" className="hover:text-sky-300">
               Talent
             </a>
-            <a href="mailto:hello@jackofai.com" className="hover:text-sky-300">
+            <a href="#contact" className="hover:text-sky-300">
               Contact
             </a>
           </div>
         </footer>
       </div>
+
+      <a
+        href="https://wa.me/61478661317"
+        className="fixed bottom-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-emerald-400 px-4 py-3 text-xs font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 hover:bg-emerald-300 transition-colors"
+        aria-label="Chat on WhatsApp"
+        target="_blank"
+        rel="noreferrer"
+        data-testid="whatsapp-floating-btn"
+      >
+        💬 Chat on WhatsApp
+      </a>
     </main>
   );
 }
