@@ -1,5 +1,41 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Copy, Check } from "lucide-react";
+import { motion } from "framer-motion";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+function AnimatedSection({ 
+  children, 
+  className = "",
+  id,
+  "data-testid": testId
+}: { 
+  children: React.ReactNode; 
+  className?: string;
+  id?: string;
+  "data-testid"?: string;
+}) {
+  return (
+    <motion.section
+      id={id}
+      className={className}
+      data-testid={testId}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={fadeInUp}
+    >
+      {children}
+    </motion.section>
+  );
+}
 
 function PrimaryButton({
   children,
@@ -40,6 +76,17 @@ function SecondaryButton({
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isFounderChatOpen, setIsFounderChatOpen] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("hello@jackofai.com");
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
@@ -116,7 +163,7 @@ export default function LandingPage() {
           </nav>
         )}
 
-        <section className="grid gap-10 md:grid-cols-[minmax(0,3fr),minmax(0,2fr)] items-center" data-testid="hero-section">
+        <AnimatedSection className="grid gap-10 md:grid-cols-[minmax(0,3fr),minmax(0,2fr)] items-center" data-testid="hero-section">
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-300/80">
               JackofAI<span className="align-super text-[8px]">™</span> Studio
@@ -194,9 +241,9 @@ export default function LandingPage() {
               adopter, collaborator, or supporter.
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="products" className="space-y-6" data-testid="products-section">
+        <AnimatedSection id="products" className="space-y-6" data-testid="products-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             Our upcoming apps
           </h2>
@@ -270,9 +317,9 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section className="space-y-4" data-testid="philosophy-section">
+        <AnimatedSection className="space-y-4" data-testid="philosophy-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             Our philosophy
           </h2>
@@ -313,9 +360,9 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="talent" className="space-y-4" data-testid="talent-section">
+        <AnimatedSection id="talent" className="space-y-4" data-testid="talent-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             Work with us: talent & freelancers
           </h2>
@@ -351,9 +398,9 @@ export default function LandingPage() {
               </button>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="early-adopters" className="space-y-4" data-testid="early-adopters-section">
+        <AnimatedSection id="early-adopters" className="space-y-4" data-testid="early-adopters-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             For early adopters
           </h2>
@@ -381,9 +428,9 @@ export default function LandingPage() {
               </SecondaryButton>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="investors" className="space-y-4" data-testid="investors-section">
+        <AnimatedSection id="investors" className="space-y-4" data-testid="investors-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             For investors & advisors
           </h2>
@@ -415,9 +462,9 @@ export default function LandingPage() {
               </button>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="founder" className="space-y-4" data-testid="founder-section">
+        <AnimatedSection id="founder" className="space-y-4" data-testid="founder-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             A note from the founder
           </h2>
@@ -438,9 +485,9 @@ export default function LandingPage() {
             </p>
             <p className="text-sm font-medium text-slate-100" data-testid="founder-name">— Bhavik Patel</p>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section id="contact" className="space-y-4" data-testid="contact-section">
+        <AnimatedSection id="contact" className="space-y-4" data-testid="contact-section">
           <h2 className="text-lg md:text-2xl font-semibold">
             Contact
           </h2>
@@ -482,9 +529,26 @@ export default function LandingPage() {
               <SecondaryButton href="https://wa.me/61426996009">
                 Chat on WhatsApp
               </SecondaryButton>
+              <button
+                onClick={copyEmail}
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:bg-white/5 transition-colors"
+                data-testid="copy-email-btn"
+              >
+                {emailCopied ? (
+                  <>
+                    <Check className="h-4 w-4 text-emerald-400" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="h-4 w-4" />
+                    Copy Email
+                  </>
+                )}
+              </button>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
         <footer className="border-t border-white/5 pt-6 pb-10 text-xs text-slate-500 flex flex-col md:flex-row md:items-center md:justify-between gap-3" data-testid="footer">
           <div>
