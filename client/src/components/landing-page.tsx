@@ -254,8 +254,8 @@ export default function LandingPage() {
                 and togetherness.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
-                <PrimaryButton href="https://familypulse.com">
-                  Visit FamilyPulse.com
+                <PrimaryButton href="https://familypulse.live">
+                  Visit FamilyPulse.live
                 </PrimaryButton>
                 <SecondaryButton href="#early-adopters">
                   Join waitlist
