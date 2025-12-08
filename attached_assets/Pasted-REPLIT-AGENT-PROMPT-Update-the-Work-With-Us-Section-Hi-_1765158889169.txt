@@ -1,0 +1,57 @@
+REPLIT AGENT PROMPT — Update the “Work With Us” Section
+Hi Replit,
+Please update the “Work with us: talent & collaborators” section of the homepage with the following compact, founder-ready content. Replace the old block with this entire updated version:
+<h2 className="text-2xl font-bold text-white mt-16">Work with us: talent & collaborators</h2>
+<p className="text-slate-300 mt-4">
+  We’re building thoughtful digital experiences and growing a small, intentional team. 
+  If you enjoy creating simple, human-centered products — or if you have expertise that can help us build responsibly — we’d love to connect.
+</p>
+
+<h3 className="text-xl font-semibold text-white mt-8">Talent & Creators</h3>
+<ul className="text-slate-300 space-y-2 mt-2">
+  <li>• App developers (React Native, Next.js, full-stack)</li>
+  <li>• UI/UX designers for modern, clean mobile apps</li>
+  <li>• Motion designers, illustrators & video creators</li>
+  <li>• Social media creators, marketers & influencers</li>
+</ul>
+
+<h3 className="text-xl font-semibold text-white mt-8">Experts & Advisors</h3>
+<p className="text-slate-300 mt-2">
+  We welcome conversations with people experienced in technology, consumer apps, AI-assisted product development, 
+  digital wellbeing, and behavioural design. 
+  We’re also open to connecting with intellectual property specialists for guidance around protecting technology and app- related innovations.
+  We do not discuss sensitive or unprotected details publicly — all deeper conversations happen privately and under NDA if needed.
+</p>
+
+<h3 className="text-xl font-semibold text-white mt-8">Investors & Strategic Partners</h3>
+<p className="text-slate-300 mt-2">
+  If you’re interested in early-stage consumer technology, calm digital experiences, or AI-powered creative tools, 
+  we’re open to thoughtful early conversations as we shape our product family.
+</p>
+
+<h3 className="text-xl font-semibold text-white mt-8">Early adopters & supporters</h3>
+<p className="text-slate-300 mt-2">
+  If you enjoy testing early products and sharing honest feedback, you’re welcome to join our early adopter list. 
+  You’ll be invited to try prototypes, share insights, and help shape new features as they evolve.
+</p>
+
+<h3 className="text-xl font-semibold text-white mt-8">Share your details</h3>
+<p className="text-slate-300 mt-2">
+  If you'd like to collaborate, please share:
+</p>
+
+<ul className="text-slate-300 space-y-1 mt-2">
+  <li>• Your name & short bio</li>
+  <li>• Your role or specialty</li>
+  <li>• A brief overview of your experience</li>
+  <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
+  <li>• The type of collaboration you're exploring</li>
+</ul>
+
+<p className="text-slate-300 mt-4">
+  Email: <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a> <br />
+  WhatsApp: Chat with the Founder
+</p>
+Please insert this in place of the current “Work with us” content and preserve the existing styling and layout structure. Save all changes and update the website.
+Thank you.
+

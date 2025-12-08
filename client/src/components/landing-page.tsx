@@ -365,99 +365,72 @@ export default function LandingPage() {
 
         <AnimatedSection id="talent" className="space-y-4" data-testid="talent-section">
           <h2 className="text-xl md:text-3xl font-semibold">
-            Work with us: talent & freelancers
+            Work with us: talent & collaborators
           </h2>
-          <div className="glass-card p-6 md:p-7 space-y-4">
+          <div className="glass-card p-6 md:p-8 space-y-6">
             <p className="text-base text-slate-300">
-              We're building our early team — slowly and thoughtfully.
-              We're looking for talented, creative collaborators who care
-              about meaningful digital experiences.
+              We're building thoughtful digital experiences and growing a small, intentional team. 
+              If you enjoy creating simple, human-centered products — or if you have expertise that can help us build responsibly — we'd love to connect.
             </p>
-            <ul className="grid gap-2 text-base text-slate-200 md:grid-cols-2">
-              <li>• Developers (React Native, Next.js, full-stack)</li>
-              <li>• UI/UX designers with a warm, emotional style</li>
-              <li>• Motion & video creators</li>
-              <li>• Illustrators and visual storytellers</li>
-              <li>• AI creatives and product thinkers</li>
-              <li>• Freelancers & part-time contributors</li>
-              <li>• Early-stage advisors</li>
-            </ul>
-            <p className="text-sm text-slate-400">
-              If you enjoy building small, beautiful things that matter — we'd
-              love to hear from you.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <SecondaryButton href="mailto:hello@jackofai.com?subject=Talent%20Network%20%2F%20Collaboration">
-                Join our talent network
-              </SecondaryButton>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-slate-100">Talent & Creators</h3>
+              <ul className="text-base text-slate-300 space-y-1">
+                <li>• App developers (React Native, Next.js, full-stack)</li>
+                <li>• UI/UX designers for modern, clean mobile apps</li>
+                <li>• Motion designers, illustrators & video creators</li>
+                <li>• Social media creators, marketers & influencers</li>
+              </ul>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-slate-100">Experts & Advisors</h3>
+              <p className="text-base text-slate-300">
+                We welcome conversations with people experienced in technology, consumer apps, AI-assisted product development, 
+                digital wellbeing, and behavioural design. 
+                We're also open to connecting with intellectual property specialists for guidance around protecting technology and app-related innovations.
+                We do not discuss sensitive or unprotected details publicly — all deeper conversations happen privately and under NDA if needed.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-slate-100">Investors & Strategic Partners</h3>
+              <p className="text-base text-slate-300">
+                If you're interested in early-stage consumer technology, calm digital experiences, or AI-powered creative tools, 
+                we're open to thoughtful early conversations as we shape our product family.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-slate-100">Early adopters & supporters</h3>
+              <p className="text-base text-slate-300">
+                If you enjoy testing early products and sharing honest feedback, you're welcome to join our early adopter list. 
+                You'll be invited to try prototypes, share insights, and help shape new features as they evolve.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <h3 className="text-lg font-semibold text-slate-100">Share your details</h3>
+              <p className="text-base text-slate-300">
+                If you'd like to collaborate, please share:
+              </p>
+              <ul className="text-base text-slate-300 space-y-1">
+                <li>• Your name & short bio</li>
+                <li>• Your role or specialty</li>
+                <li>• A brief overview of your experience</li>
+                <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
+                <li>• The type of collaboration you're exploring</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              <PrimaryButton href="mailto:hello@jackofai.com?subject=Collaboration%20Inquiry">
+                Email us
+              </PrimaryButton>
               <button
                 onClick={() => setIsFounderChatOpen(true)}
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-slate-100 hover:bg-white/5 transition-colors"
                 data-testid="talent-chat-founder-btn"
-              >
-                Chat with the Founder
-              </button>
-            </div>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection id="early-adopters" className="space-y-4" data-testid="early-adopters-section">
-          <h2 className="text-xl md:text-3xl font-semibold">
-            For early adopters
-          </h2>
-          <div className="glass-card p-6 md:p-7 space-y-4">
-            <p className="text-base text-slate-300">
-              We're inviting early adopters to test, explore, and give
-              feedback on our upcoming releases.
-            </p>
-            <p className="text-base text-slate-300">
-              Get early access to:
-            </p>
-            <ul className="text-base text-slate-200 space-y-1">
-              <li>• ChristmasPulse</li>
-              <li>• FamilyPulse</li>
-            </ul>
-            <p className="text-sm text-slate-400">
-              Be part of crafting the experience from the very beginning.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <PrimaryButton href="mailto:hello@jackofai.com?subject=ChristmasPulse%20Early%20Access">
-                ChristmasPulse early access
-              </PrimaryButton>
-              <SecondaryButton href="mailto:hello@jackofai.com?subject=FamilyPulse%20Early%20Access">
-                FamilyPulse early access
-              </SecondaryButton>
-            </div>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection id="investors" className="space-y-4" data-testid="investors-section">
-          <h2 className="text-xl md:text-3xl font-semibold">
-            For investors & advisors
-          </h2>
-          <div className="glass-card p-6 md:p-7 space-y-4">
-            <p className="text-base text-slate-300">
-              If you're exploring opportunities in human-first AI or want
-              to support purpose-driven digital products, we'd love to
-              share our vision.
-            </p>
-            <p className="text-base text-slate-300">
-              We are open to connecting with:
-            </p>
-            <ul className="text-base text-slate-200 space-y-1">
-              <li>• Angel investors</li>
-              <li>• Operators</li>
-              <li>• Product advisors</li>
-              <li>• Creative technology leaders</li>
-            </ul>
-            <div className="flex flex-wrap gap-3">
-              <PrimaryButton href="mailto:hello@jackofai.com?subject=Investor%20%2F%20Advisor%20Intro">
-                Request founder intro
-              </PrimaryButton>
-              <button
-                onClick={() => setIsFounderChatOpen(true)}
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-slate-100 hover:bg-white/5 transition-colors"
-                data-testid="investor-chat-founder-btn"
               >
                 Chat with the Founder
               </button>
