@@ -78,8 +78,8 @@ function SecondaryButton({
 const currentNeeds = [
   "React Native developer (short sprint)",
   "Next.js frontend collaborator",
-  "LinkedIn outreach / content partner",
-  "Instagram & Reels social media collaborator",
+  "UI/UX designer for calm mobile apps",
+  "Instagram & Reels collaborator",
   "YouTube shorts / video editor",
   "IP / patent advisor (apps & AI)",
   "Early adopters for ChristmasPulse & FamilyPulse testing"
@@ -183,6 +183,9 @@ export default function LandingPage() {
               JackofAI™ is a creative technology studio shaping meaningful
               digital experiences — starting with ChristmasPulse and
               FamilyPulse.
+            </p>
+            <p className="text-slate-300 text-sm sm:text-base">
+              We focus on small, calm products that support reflection, celebration, and everyday connection – not more noise.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
