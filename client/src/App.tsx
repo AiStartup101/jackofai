@@ -6,6 +6,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import Home from "@/pages/home";
 import Contact from "@/pages/contact";
+import PrivacyPage from "@/pages/privacy";
+import TermsPage from "@/pages/terms";
+import CookiePage from "@/pages/cookies";
+import AIDisclaimerPage from "@/pages/ai-disclaimer";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -13,6 +17,10 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={PrivacyPage} />
+      <Route path="/terms" component={TermsPage} />
+      <Route path="/cookies" component={CookiePage} />
+      <Route path="/ai-disclaimer" component={AIDisclaimerPage} />
       <Route component={NotFound} />
     </Switch>
   );

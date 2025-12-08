@@ -551,28 +551,30 @@ export default function LandingPage() {
           </div>
         </AnimatedSection>
 
-        <footer className="border-t border-white/5 pt-6 pb-10 text-xs text-slate-500 flex flex-col md:flex-row md:items-center md:justify-between gap-3" data-testid="footer">
-          <div className="flex items-center gap-2">
-            <img 
-              src={jackofaiLogo} 
-              alt="JackofAI" 
-              className="h-6 w-auto opacity-70"
-            />
-            <span>· {new Date().getFullYear()}</span>
+        <footer className="border-t border-white/5 pt-6 pb-10 text-xs text-slate-500 flex flex-col gap-4" data-testid="footer">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div className="flex flex-col">
+              <span>
+                JackofAI<span className="align-super text-[8px]">™</span> · {new Date().getFullYear()}
+              </span>
+              <span className="text-[11px] text-slate-400">
+                Warm, simple AI products that bring people closer.
+              </span>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <a href="/" className="hover:text-sky-300">Home</a>
+              <a href="#products" className="hover:text-sky-300">Products</a>
+              <a href="#talent" className="hover:text-sky-300">Talent</a>
+              <a href="#contact" className="hover:text-sky-300">Contact</a>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-4">
-            <a href="#" className="hover:text-sky-300">
-              Home
-            </a>
-            <a href="#products" className="hover:text-sky-300">
-              Products
-            </a>
-            <a href="#talent" className="hover:text-sky-300">
-              Talent
-            </a>
-            <a href="#contact" className="hover:text-sky-300">
-              Contact
-            </a>
+
+          <div className="flex flex-wrap gap-4 text-slate-400">
+            <a href="/privacy" className="hover:text-sky-300">Privacy Policy</a>
+            <a href="/terms" className="hover:text-sky-300">Terms & Conditions</a>
+            <a href="/cookies" className="hover:text-sky-300">Cookie Notice</a>
+            <a href="/ai-disclaimer" className="hover:text-sky-300">AI Disclaimer</a>
           </div>
         </footer>
       </div>
