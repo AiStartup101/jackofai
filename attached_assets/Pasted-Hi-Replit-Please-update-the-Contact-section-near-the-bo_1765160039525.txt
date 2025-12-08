@@ -1,0 +1,74 @@
+Hi Replit,
+
+Please update the Contact section near the bottom of `app/page.tsx` to include JackofAI social links.
+
+1. Find the "Contact" block that currently looks roughly like this:
+
+<h2 className="text-2xl font-bold text-white mt-16">Contact</h2>
+<p className="text-slate-300 mt-4">
+  For collaborations, talent opportunities, early access, or investor conversations, you can reach JackofAI™ here:
+</p>
+<p className="text-slate-300 mt-4">
+  Email: hello@jackofai.com<br />
+  Phone: +61 426 996 009<br />
+  WhatsApp: Chat on WhatsApp
+</p>
+
+...and then the buttons ("Email JackofAI", "Chat on WhatsApp") below it.
+
+2. Replace that contact block with the following content (keep the existing button row as it is):
+
+<h2 className="text-2xl font-bold text-white mt-16">Contact</h2>
+<p className="text-slate-300 mt-4">
+  For collaborations, talent opportunities, early access, or investor conversations, you can reach JackofAI™ here:
+</p>
+
+<p className="text-slate-300 mt-4">
+  Email: <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a><br />
+  Phone: +61 426 996 009<br />
+  WhatsApp: Chat on WhatsApp
+</p>
+
+<div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
+  <span className="text-slate-400">Find us:</span>
+  <a
+    href="https://www.linkedin.com/company/jackofai"
+    target="_blank"
+    rel="noreferrer"
+    className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+  >
+    LinkedIn
+  </a>
+  <a
+    href="https://instagram.com/jackofai"
+    target="_blank"
+    rel="noreferrer"
+    className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+  >
+    Instagram
+  </a>
+  <a
+    href="https://youtube.com/@jackofai"
+    target="_blank"
+    rel="noreferrer"
+    className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+  >
+    YouTube
+  </a>
+  <a
+    href="https://github.com/jackofai"
+    target="_blank"
+    rel="noreferrer"
+    className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+  >
+    GitHub
+  </a>
+</div>
+
+3. Leave the existing CTA buttons (“Email us”, “Chat with the Founder”) directly under this block so the layout stays the same.
+
+If any of these social URLs are different later, we can just update the href values without changing layout.
+
+Please save all changes and rebuild/redeploy the site.
+
+Thanks!

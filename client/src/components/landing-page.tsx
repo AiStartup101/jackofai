@@ -485,7 +485,7 @@ export default function LandingPage() {
           <h2 className="text-xl md:text-3xl font-semibold">
             Contact
           </h2>
-          <div className="glass-card p-6 md:p-7 space-y-3 text-base text-slate-300">
+          <div className="glass-card p-6 md:p-7 space-y-4 text-base text-slate-300">
             <p>
               For collaborations, talent opportunities, early access, or investor conversations,
               you can reach JackofAI™ here:
@@ -516,6 +516,48 @@ export default function LandingPage() {
                 </a>
               </p>
             </div>
+
+            {/* Social Links */}
+            <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
+              <span className="text-slate-400">Find us:</span>
+              <a
+                href="https://www.linkedin.com/company/jackofai"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+                data-testid="social-linkedin"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://instagram.com/jackofai"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+                data-testid="social-instagram"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://youtube.com/@jackofai"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+                data-testid="social-youtube"
+              >
+                YouTube
+              </a>
+              <a
+                href="https://github.com/jackofai"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/10 px-3 py-1 hover:border-sky-400 hover:text-sky-300 transition"
+                data-testid="social-github"
+              >
+                GitHub
+              </a>
+            </div>
+
             <div className="flex flex-wrap gap-3 pt-2">
               <SecondaryButton href="mailto:hello@jackofai.com">
                 Email JackofAI
