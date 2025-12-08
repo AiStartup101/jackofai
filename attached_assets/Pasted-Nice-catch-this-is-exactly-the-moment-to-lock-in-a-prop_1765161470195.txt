@@ -1,0 +1,398 @@
+Nice catch — this is exactly the moment to lock in a proper “mini site system” instead of just a single page.
+
+Below is one single, copy-paste Replit Agent prompt that will:
+	1.	Add new pages
+	•	/about
+	•	/opportunities
+	•	/early-access
+	•	/founder
+	•	/press
+	2.	Add a newsletter / updates email capture component and show it on the homepage.
+	3.	Wire navigation links to these pages.
+
+You can paste this whole thing into Replit AI as-is.
+
+⸻
+
+🧾 REPLIT PROMPT — Generate All Remaining Pages + Email Capture
+
+Hi Replit,
+
+Please help me expand the JackofAI website with new pages and an email capture component.
+
+I’m using the Next.js app router. Follow these steps:
+
+// ---------------------------------------------------------------------
+// 1) UPDATE NAVIGATION TO INCLUDE NEW PAGES
+// ---------------------------------------------------------------------
+
+In `app/page.tsx`, locate the header navigation where the top menu links are defined
+(e.g. Home, Products, Talent, Contact). Please update / extend it to:
+
+- Home ("/")
+- Products (anchor to #products)
+- Talent & collaborators (anchor to the “Work with us” section)
+- Early access (link to "/early-access")
+- About (link to "/about")
+- Contact (anchor to the Contact section)
+
+For example (adjust to match the existing header structure):
+
+<ul className="flex gap-6 text-sm text-slate-200">
+  <li><a href="/" className="hover:text-sky-300">Home</a></li>
+  <li><a href="#products" className="hover:text-sky-300">Products</a></li>
+  <li><a href="#talent" className="hover:text-sky-300">Talent & collaborators</a></li>
+  <li><a href="/early-access" className="hover:text-sky-300">Early access</a></li>
+  <li><a href="/about" className="hover:text-sky-300">About</a></li>
+  <li><a href="#contact" className="hover:text-sky-300">Contact</a></li>
+</ul>
+
+// ---------------------------------------------------------------------
+// 2) ADD A NEWSLETTER / EMAIL CAPTURE COMPONENT
+// ---------------------------------------------------------------------
+
+Create a new file: `app/components/NewsletterSignup.tsx` with the following:
+
+"use client";
+
+import { useState, FormEvent } from "react";
+
+export default function NewsletterSignup() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("submitting");
+    // For now, just simulate a successful signup.
+    setTimeout(() => {
+      setStatus("success");
+      setEmail("");
+    }, 600);
+  };
+
+  return (
+    <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 px-5 py-5 max-w-xl">
+      <h3 className="text-lg font-semibold text-white">
+        Get updates & early access
+      </h3>
+      <p className="text-sm text-slate-300 mt-2">
+        Be the first to hear about new apps, early access invites, and collaboration opportunities.
+      </p>
+      <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-3 sm:flex-row">
+        <input
+          type="email"
+          required
+          placeholder="Your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="flex-1 rounded-xl bg-slate-900/70 border border-white/10 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400"
+        />
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="inline-flex items-center justify-center rounded-xl bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-400 disabled:opacity-60"
+        >
+          {status === "submitting" ? "Sending..." : "Get updates"}
+        </button>
+      </form>
+      {status === "success" && (
+        <p className="mt-2 text-xs text-emerald-300">
+          Thank you — you’re on the list.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="mt-2 text-xs text-rose-300">
+          Something went wrong. Please try again.
+        </p>
+      )}
+    </div>
+  );
+}
+
+Now, in `app/page.tsx`, import and use this component near the hero or early-adopter area.
+
+At the top of the file:
+
+import NewsletterSignup from "./components/NewsletterSignup";
+
+Then, somewhere under the main hero / introduction section (before the “Our upcoming apps” or “For early adopters” sections), insert:
+
+<NewsletterSignup />
+
+// ---------------------------------------------------------------------
+// 3) CREATE /ABOUT PAGE
+// ---------------------------------------------------------------------
+
+Create `app/about/page.tsx`:
+
+export default function AboutPage() {
+  return (
+    <main className="max-w-3xl mx-auto py-20 px-4 text-slate-100 space-y-6">
+      <h1 className="text-3xl font-bold text-white">About JackofAI</h1>
+
+      <p>
+        JackofAI™ is a small, founder-led studio exploring how simple digital tools 
+        can help people feel more connected – to themselves, to their families, and to the moments that matter.
+      </p>
+
+      <p>
+        Instead of building loud, overwhelming apps, we focus on calm, warm experiences: 
+        tools that fit quietly into everyday life and support reflection, celebration, and togetherness.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">What we’re building</h2>
+      <p>
+        We’re starting with a small family of apps currently in development:
+      </p>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>
+          <strong>ChristmasPulse</strong> – a festive app designed to help people create warm, heartfelt 
+          Christmas moments with cards, messages, and shared memories.
+        </li>
+        <li>
+          <strong>FamilyPulse</strong> – a calm, everyday app that supports emotional connection within families 
+          through gentle reflection, communication, and rituals.
+        </li>
+      </ul>
+      <p className="text-sm text-slate-300">
+        Details may evolve as we learn and build. We share only high-level product stories publicly; anything deeper happens privately.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">How we like to build</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Small, focused releases instead of big, noisy launches.</li>
+        <li>Design that feels warm, clear, and human – even when powered by AI under the surface.</li>
+        <li>Meaningful collaborations with builders, creators, experts, and early adopters.</li>
+      </ul>
+
+      <p>
+        If this direction resonates with you, we’d love to connect – whether you’re a collaborator, expert, investor, or early supporter.
+      </p>
+    </main>
+  );
+}
+
+// ---------------------------------------------------------------------
+// 4) CREATE /OPPORTUNITIES PAGE
+// ---------------------------------------------------------------------
+
+Create `app/opportunities/page.tsx`:
+
+export default function OpportunitiesPage() {
+  return (
+    <main className="max-w-3xl mx-auto py-20 px-4 text-slate-100 space-y-6">
+      <h1 className="text-3xl font-bold text-white">Opportunities at JackofAI</h1>
+
+      <p>
+        We’re not a traditional hiring pipeline. Instead, we’re building a small network of people who enjoy 
+        crafting thoughtful digital products – and we collaborate in flexible, project-based ways.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">For builders & creators</h2>
+      <p>
+        Ideal if you like turning ideas into working products and experiences:
+      </p>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>App developers (React Native, Next.js, full-stack).</li>
+        <li>UI/UX designers for modern, calm mobile interfaces.</li>
+        <li>Motion designers, illustrators, and video creators.</li>
+        <li>Social media creators and marketing partners.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">For experts & advisors</h2>
+      <p>
+        We welcome conversations with people experienced in consumer technology, AI-assisted products, 
+        digital wellbeing, behaviour design, and intellectual property for software and apps.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">For investors & strategic partners</h2>
+      <p>
+        We’re open to thoughtful early conversations with angels, operators, and partners who understand 
+        calm consumer apps and brand-led product building.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">How to reach us</h2>
+      <p>
+        If you’d like to explore working together, please email:
+      </p>
+      <p>
+        <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a>
+      </p>
+      <p className="text-sm text-slate-300">
+        Share a short bio, what you do, links to your work, and what kind of collaboration you have in mind.
+      </p>
+    </main>
+  );
+}
+
+// ---------------------------------------------------------------------
+// 5) CREATE /EARLY-ACCESS PAGE
+// ---------------------------------------------------------------------
+
+Create `app/early-access/page.tsx`:
+
+export default function EarlyAccessPage() {
+  return (
+    <main className="max-w-3xl mx-auto py-20 px-4 text-slate-100 space-y-6">
+      <h1 className="text-3xl font-bold text-white">Early access program</h1>
+
+      <p>
+        We believe the best products are built with real people, not in isolation. 
+        Our early access program invites a small group of testers and supporters to help shape ChristmasPulse and FamilyPulse as they evolve.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">Who it’s for</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>People who enjoy trying early versions of apps.</li>
+        <li>Families and individuals who value emotional connection and meaningful moments.</li>
+        <li>Creators and storytellers who want to experiment with new tools.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">What you’ll get</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Early access to features before public release.</li>
+        <li>Occasional behind-the-scenes updates from the founder.</li>
+        <li>An opportunity to influence how the apps feel and work.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">What we ask in return</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Honest, kind feedback on what feels useful or confusing.</li>
+        <li>Consent before sharing any stories or screenshots publicly.</li>
+        <li>Patience – early builds may be rough around the edges.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">How to join</h2>
+      <p>
+        If you’d like to be considered for early access, please send a short note to{" "}
+        <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a>{" "}
+        with:
+      </p>
+      <ul className="list-disc pl-6 space-y-2">
+        <li>Who you are and where you’re based.</li>
+        <li>Whether you’re more interested in ChristmasPulse, FamilyPulse, or both.</li>
+        <li>Why early access appeals to you.</li>
+      </ul>
+    </main>
+  );
+}
+
+// ---------------------------------------------------------------------
+// 6) CREATE /FOUNDER PAGE
+// ---------------------------------------------------------------------
+
+Create `app/founder/page.tsx`:
+
+export default function FounderPage() {
+  return (
+    <main className="max-w-3xl mx-auto py-20 px-4 text-slate-100 space-y-6">
+      <h1 className="text-3xl font-bold text-white">A note from the founder</h1>
+
+      <p>
+        I started JackofAI™ to build small, warm digital tools that help people feel more connected – 
+        to themselves, to their families, and to the moments that matter.
+      </p>
+
+      <p>
+        Technology doesn’t have to be overwhelming or noisy. I’m interested in apps that feel calm, 
+        respectful of attention, and emotionally intelligent – tools that support real life rather than 
+        compete with it.
+      </p>
+
+      <p>
+        JackofAI is still early, but the intention is clear: build a family of simple products that people 
+        genuinely enjoy using, and work with collaborators who care about craft and kindness.
+      </p>
+
+      <p>
+        If this resonates with you – whether you’re a builder, creator, expert, investor, or early adopter – 
+        I’d love to connect.
+      </p>
+
+      <p className="mt-4">
+        — Bhavik Patel<br />
+        <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a>
+      </p>
+    </main>
+  );
+}
+
+// ---------------------------------------------------------------------
+// 7) CREATE /PRESS PAGE (MEDIA KIT)
+// ---------------------------------------------------------------------
+
+Create `app/press/page.tsx`:
+
+export default function PressPage() {
+  return (
+    <main className="max-w-3xl mx-auto py-20 px-4 text-slate-100 space-y-6">
+      <h1 className="text-3xl font-bold text-white">Press & media kit</h1>
+
+      <p>
+        This page provides a quick overview of JackofAI™ for journalists, partners, and collaborators.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">Quick facts</h2>
+      <ul className="list-disc pl-6 space-y-2">
+        <li><strong>Name:</strong> JackofAI™ Studio</li>
+        <li><strong>Focus:</strong> Simple, human-centered digital products with a warm, calm feel.</li>
+        <li><strong>Current apps:</strong> ChristmasPulse (festive app, in development), FamilyPulse (everyday family connection app, in development).</li>
+        <li><strong>Location:</strong> Founder based in Australia.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">Logo & branding</h2>
+      <p>
+        You may use the JackofAI™ logo to reference the company in articles or coverage, 
+        provided it is not altered or used in a misleading way.
+      </p>
+      <p className="text-sm text-slate-300">
+        For high-resolution logo files or specific usage questions, please email{" "}
+        <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a>.
+      </p>
+
+      <h2 className="text-2xl font-semibold text-white mt-6">Contact for press</h2>
+      <p>
+        For interviews, quotes, or media enquiries:
+      </p>
+      <p>
+        <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a>
+      </p>
+    </main>
+  );
+}
+
+// ---------------------------------------------------------------------
+// 8) OPTIONAL: ADD LINKS TO THESE PAGES IN FOOTER
+// ---------------------------------------------------------------------
+
+In the footer nav (where Privacy Policy, Terms & Conditions etc. are listed),
+please add compact links to:
+
+- About ("/about")
+- Opportunities ("/opportunities")
+- Early access ("/early-access")
+- Founder ("/founder")
+- Press ("/press")
+
+For example:
+
+<a href="/about" className="hover:text-sky-300">About</a>
+<a href="/opportunities" className="hover:text-sky-300">Opportunities</a>
+<a href="/early-access" className="hover:text-sky-300">Early access</a>
+<a href="/founder" className="hover:text-sky-300">Founder</a>
+<a href="/press" className="hover:text-sky-300">Press</a>
+
+Please keep the existing legal links (Privacy, Terms, Cookies, AI disclaimer).
+
+// ---------------------------------------------------------------------
+
+After all these changes, please save, build, and redeploy the site.
+
+Thank you!
+
+
+⸻
+
+Once you’ve run this and it’s live, send me a couple of screenshots and I’ll help you do a final “founder polish pass” — tiny wording + layout tweaks so the whole site feels tight, intentional, and ready for real-world exposure.

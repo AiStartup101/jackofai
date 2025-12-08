@@ -10,6 +10,11 @@ import PrivacyPage from "@/pages/privacy";
 import TermsPage from "@/pages/terms";
 import CookiePage from "@/pages/cookies";
 import AIDisclaimerPage from "@/pages/ai-disclaimer";
+import AboutPage from "@/pages/about";
+import OpportunitiesPage from "@/pages/opportunities";
+import EarlyAccessPage from "@/pages/early-access";
+import FounderPage from "@/pages/founder";
+import PressPage from "@/pages/press";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +26,11 @@ function Router() {
       <Route path="/terms" component={TermsPage} />
       <Route path="/cookies" component={CookiePage} />
       <Route path="/ai-disclaimer" component={AIDisclaimerPage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/opportunities" component={OpportunitiesPage} />
+      <Route path="/early-access" component={EarlyAccessPage} />
+      <Route path="/founder" component={FounderPage} />
+      <Route path="/press" component={PressPage} />
       <Route component={NotFound} />
     </Switch>
   );

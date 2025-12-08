@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, Copy, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import jackofaiLogo from "@assets/image_1765154390436.jpeg";
+import NewsletterSignup from "./newsletter-signup";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -126,16 +127,13 @@ export default function LandingPage() {
               Products
             </a>
             <a href="#talent" className="hover:text-sky-300">
-              Talent & Freelancers
+              Talent
             </a>
-            <a href="#early-adopters" className="hover:text-sky-300">
-              Early Adopters
+            <a href="/early-access" className="hover:text-sky-300">
+              Early Access
             </a>
-            <a href="#investors" className="hover:text-sky-300">
-              Investors
-            </a>
-            <a href="#founder" className="hover:text-sky-300">
-              Founder
+            <a href="/about" className="hover:text-sky-300">
+              About
             </a>
             <a href="#contact" className="hover:text-sky-300">
               Contact
@@ -157,16 +155,13 @@ export default function LandingPage() {
               Products
             </a>
             <a href="#talent" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
-              Talent & Freelancers
+              Talent
             </a>
-            <a href="#early-adopters" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
-              Early Adopters
+            <a href="/early-access" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
+              Early Access
             </a>
-            <a href="#investors" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
-              Investors
-            </a>
-            <a href="#founder" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
-              Founder
+            <a href="/about" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
+              About
             </a>
             <a href="#contact" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
               Contact
@@ -252,6 +247,10 @@ export default function LandingPage() {
               adopter, collaborator, or supporter.
             </div>
           </div>
+        </AnimatedSection>
+
+        <AnimatedSection className="space-y-4" data-testid="newsletter-section">
+          <NewsletterSignup />
         </AnimatedSection>
 
         <AnimatedSection id="products" className="space-y-6" data-testid="products-section">
@@ -638,6 +637,14 @@ export default function LandingPage() {
           </div>
 
           <div className="flex flex-wrap gap-5 text-sm text-slate-300">
+            <a href="/about" className="hover:text-sky-300 transition-colors">About</a>
+            <a href="/opportunities" className="hover:text-sky-300 transition-colors">Opportunities</a>
+            <a href="/early-access" className="hover:text-sky-300 transition-colors">Early Access</a>
+            <a href="/founder" className="hover:text-sky-300 transition-colors">Founder</a>
+            <a href="/press" className="hover:text-sky-300 transition-colors">Press</a>
+          </div>
+
+          <div className="flex flex-wrap gap-5 text-sm text-slate-400">
             <a href="/privacy" className="hover:text-sky-300 transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-sky-300 transition-colors">Terms & Conditions</a>
             <a href="/cookies" className="hover:text-sky-300 transition-colors">Cookie Notice</a>
