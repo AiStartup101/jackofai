@@ -14,7 +14,7 @@ export default function TermsPage() {
         <p className="text-base text-slate-400">Last updated: {new Date().getFullYear()}</p>
 
         <p className="text-lg">
-          By accessing or using JackofAI™ products, websites, or services, you
+          By accessing or using JackofAI Pty Ltd. ("JackofAI™") products, websites, or services, you
           agree to these Terms & Conditions.
         </p>
 
@@ -27,7 +27,7 @@ export default function TermsPage() {
 
         <h2 className="text-2xl font-semibold pt-4">Intellectual Property</h2>
         <p className="text-base text-slate-300">
-          All trademarks, logos, and content are the property of JackofAI™. You
+          All trademarks, logos, and content are the property of JackofAI Pty Ltd. You
           may not reproduce or redistribute without written permission.
         </p>
 
@@ -39,12 +39,19 @@ export default function TermsPage() {
 
         <h2 className="text-2xl font-semibold pt-4">Limitation of Liability</h2>
         <p className="text-base text-slate-300">
-          JackofAI™ is not liable for damages arising from use or inability to use
+          JackofAI Pty Ltd. is not liable for damages arising from use or inability to use
           our services, including reliance on AI-generated content.
         </p>
 
         <h2 className="text-2xl font-semibold pt-4">Contact</h2>
-        <p className="text-base text-slate-300">Email: <a className="text-sky-400 hover:text-sky-300" href="mailto:hello@jackofai.com">hello@jackofai.com</a></p>
+        <p className="text-base text-slate-300">
+          JackofAI Pty Ltd.<br />
+          Email: <a className="text-sky-400 hover:text-sky-300" href="mailto:hello@jackofai.com">hello@jackofai.com</a>
+        </p>
+
+        <div className="border-t border-white/10 pt-6 mt-8 text-sm text-slate-400">
+          © {new Date().getFullYear()} JackofAI Pty Ltd. All rights reserved.
+        </div>
       </div>
     </div>
   );

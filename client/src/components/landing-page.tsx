@@ -551,30 +551,33 @@ export default function LandingPage() {
           </div>
         </AnimatedSection>
 
-        <footer className="border-t border-white/5 pt-6 pb-10 text-sm text-slate-500 flex flex-col gap-4" data-testid="footer">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <div className="flex flex-col">
-              <span>
-                JackofAI<span className="align-super text-[10px]">™</span> · {new Date().getFullYear()}
+        <footer className="border-t border-white/10 pt-8 pb-12 flex flex-col gap-6" data-testid="footer">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="flex flex-col gap-1">
+              <span className="text-base font-semibold text-slate-100">
+                JackofAI<span className="align-super text-[10px]">™</span> Pty Ltd.
               </span>
-              <span className="text-sm text-slate-400">
+              <span className="text-sm text-slate-300">
                 Warm, simple AI products that bring people closer.
+              </span>
+              <span className="text-xs text-slate-400 mt-1">
+                © {new Date().getFullYear()} JackofAI Pty Ltd. All rights reserved.
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <a href="/" className="hover:text-sky-300">Home</a>
-              <a href="#products" className="hover:text-sky-300">Products</a>
-              <a href="#talent" className="hover:text-sky-300">Talent</a>
-              <a href="#contact" className="hover:text-sky-300">Contact</a>
+            <div className="flex flex-wrap gap-5 text-sm font-medium text-slate-200">
+              <a href="/" className="hover:text-sky-300 transition-colors">Home</a>
+              <a href="#products" className="hover:text-sky-300 transition-colors">Products</a>
+              <a href="#talent" className="hover:text-sky-300 transition-colors">Talent</a>
+              <a href="#contact" className="hover:text-sky-300 transition-colors">Contact</a>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 text-slate-400">
-            <a href="/privacy" className="hover:text-sky-300">Privacy Policy</a>
-            <a href="/terms" className="hover:text-sky-300">Terms & Conditions</a>
-            <a href="/cookies" className="hover:text-sky-300">Cookie Notice</a>
-            <a href="/ai-disclaimer" className="hover:text-sky-300">AI Disclaimer</a>
+          <div className="flex flex-wrap gap-5 text-sm text-slate-300">
+            <a href="/privacy" className="hover:text-sky-300 transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-sky-300 transition-colors">Terms & Conditions</a>
+            <a href="/cookies" className="hover:text-sky-300 transition-colors">Cookie Notice</a>
+            <a href="/ai-disclaimer" className="hover:text-sky-300 transition-colors">AI Disclaimer</a>
           </div>
         </footer>
       </div>

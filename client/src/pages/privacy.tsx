@@ -14,7 +14,7 @@ export default function PrivacyPage() {
         <p className="text-base text-slate-400">Last updated: {new Date().getFullYear()}</p>
 
         <p className="text-lg">
-          JackofAI™ is committed to protecting your privacy. This Privacy Policy
+          JackofAI Pty Ltd. ("JackofAI™") is committed to protecting your privacy. This Privacy Policy
           explains what information we collect, how we use it, and your rights
           regarding your personal data.
         </p>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
 
         <h2 className="text-2xl font-semibold pt-4">Third-Party Services</h2>
         <p className="text-base text-slate-300">
-          JackofAI™ may use third-party tools (analytics, authentication, AI
+          JackofAI Pty Ltd. may use third-party tools (analytics, authentication, AI
           infrastructure). Each provider follows their own privacy practices.
         </p>
 
@@ -54,7 +54,14 @@ export default function PrivacyPage() {
         </p>
 
         <h2 className="text-2xl font-semibold pt-4">Contact Us</h2>
-        <p className="text-base text-slate-300">Email: <a className="text-sky-400 hover:text-sky-300" href="mailto:hello@jackofai.com">hello@jackofai.com</a></p>
+        <p className="text-base text-slate-300">
+          JackofAI Pty Ltd.<br />
+          Email: <a className="text-sky-400 hover:text-sky-300" href="mailto:hello@jackofai.com">hello@jackofai.com</a>
+        </p>
+
+        <div className="border-t border-white/10 pt-6 mt-8 text-sm text-slate-400">
+          © {new Date().getFullYear()} JackofAI Pty Ltd. All rights reserved.
+        </div>
       </div>
     </div>
   );

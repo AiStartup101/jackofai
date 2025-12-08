@@ -13,7 +13,7 @@ export default function CookiePage() {
         <h1 className="text-4xl font-bold">Cookie Notice</h1>
 
         <p className="text-lg">
-          JackofAI™ may use cookies to enhance website functionality, remember
+          JackofAI Pty Ltd. ("JackofAI™") may use cookies to enhance website functionality, remember
           user preferences, and analyse performance. Cookies may also be used by
           third-party analytics tools.
         </p>
@@ -30,6 +30,10 @@ export default function CookiePage() {
           You may disable cookies in your browser settings, though some features
           may not work properly without them.
         </p>
+
+        <div className="border-t border-white/10 pt-6 mt-8 text-sm text-slate-400">
+          © {new Date().getFullYear()} JackofAI Pty Ltd. All rights reserved.
+        </div>
       </div>
     </div>
   );

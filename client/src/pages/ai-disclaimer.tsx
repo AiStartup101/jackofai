@@ -13,14 +13,14 @@ export default function AIDisclaimerPage() {
         <h1 className="text-4xl font-bold">AI Use Disclaimer</h1>
 
         <p className="text-lg">
-          JackofAI™ products use artificial intelligence to assist with message
+          JackofAI Pty Ltd. ("JackofAI™") products use artificial intelligence to assist with message
           generation, creativity, organisation, and personalised experiences. AI
           systems may sometimes produce incomplete, outdated, or incorrect
           information.
         </p>
 
         <p className="text-base text-slate-300">
-          Users should review AI-generated content before relying on it. JackofAI™
+          Users should review AI-generated content before relying on it. JackofAI Pty Ltd.
           is not responsible for decisions made based on AI outputs.
         </p>
 
@@ -33,6 +33,10 @@ export default function AIDisclaimerPage() {
           If you have questions, please contact: 
           <a className="text-sky-400 hover:text-sky-300" href="mailto:hello@jackofai.com"> hello@jackofai.com</a>.
         </p>
+
+        <div className="border-t border-white/10 pt-6 mt-8 text-sm text-slate-400">
+          © {new Date().getFullYear()} JackofAI Pty Ltd. All rights reserved.
+        </div>
       </div>
     </div>
   );
