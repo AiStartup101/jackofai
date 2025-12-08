@@ -99,13 +99,16 @@ export default function LandingPage() {
 
       <div className="container py-10 md:py-16 space-y-20 md:space-y-28">
         <header className="flex items-center justify-between gap-4">
-          <a href="#" className="flex items-center" data-testid="logo-link">
+          <a href="#" className="flex flex-col gap-1" data-testid="logo-link">
             <img 
               src={jackofaiLogo} 
               alt="JackofAI Logo" 
-              className="h-8 md:h-10 w-auto select-none"
+              className="h-12 md:h-14 w-auto select-none"
               data-testid="brand-logo"
             />
+            <span className="text-[10px] md:text-xs text-slate-400 tracking-wide">
+              Warm, simple AI products
+            </span>
           </a>
 
           <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300" data-testid="desktop-nav">
@@ -553,7 +556,7 @@ export default function LandingPage() {
             <img 
               src={jackofaiLogo} 
               alt="JackofAI" 
-              className="h-5 w-auto opacity-60"
+              className="h-7 w-auto opacity-70"
             />
             <span>· {new Date().getFullYear()}</span>
           </div>
