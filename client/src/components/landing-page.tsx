@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Copy, Check } from "lucide-react";
 import { motion } from "framer-motion";
-import jackofaiLogo from "@assets/image_1765153923649.png";
+import jackofaiLogo from "@assets/image_1765154390436.jpeg";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -103,7 +103,7 @@ export default function LandingPage() {
             <img 
               src={jackofaiLogo} 
               alt="JackofAI Logo" 
-              className="h-12 md:h-14 w-auto select-none"
+              className="h-10 md:h-12 w-auto select-none"
               data-testid="brand-logo"
             />
             <span className="text-[10px] md:text-xs text-slate-400 tracking-wide">
@@ -556,7 +556,7 @@ export default function LandingPage() {
             <img 
               src={jackofaiLogo} 
               alt="JackofAI" 
-              className="h-7 w-auto opacity-70"
+              className="h-6 w-auto opacity-70"
             />
             <span>· {new Date().getFullYear()}</span>
           </div>
