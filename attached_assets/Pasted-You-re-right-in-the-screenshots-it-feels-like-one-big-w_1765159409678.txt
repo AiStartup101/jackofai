@@ -1,0 +1,125 @@
+You’re right – in the screenshots it feels like one big wall of text, even though the content is good. Splitting it into clear blocks for each audience (builders, experts, investors, early adopters) will make it feel lighter and help the right people self-select fast.
+
+Let’s turn it into 4 compact cards + one shared CTA row.
+
+⸻
+
+🔧 Replit prompt – refactor section into 4 clear blocks
+
+Copy-paste this into the Replit AI agent. It will replace the current “Work with us” content with a more compact, card-based layout.
+
+Hi Replit, 
+
+Please update the “Work with us: talent & collaborators” section to be more compact and split into clear blocks.
+
+1. In `app/page.tsx`, find the section that begins with:
+
+<h2 className="text-2xl font-bold text-white mt-16">Work with us: talent & collaborators</h2>
+
+and currently includes the long paragraphs and lists for Talent & Creators, Experts & Advisors, Investors & Strategic Partners, Early adopters & supporters, and Share your details.
+
+2. Replace everything from that <h2> down to (but not including) the “A note from the founder” section with the following:
+
+<h2 className="text-2xl font-bold text-white mt-16">
+  Work with us: talent & collaborators
+</h2>
+<p className="text-slate-300 mt-4">
+  We’re growing a small, intentional network of people who enjoy creating simple, human-centered digital products. 
+  Whether you build, design, advise, invest, or test early ideas – we’d love to connect.
+</p>
+
+<div className="mt-6 grid gap-6 md:grid-cols-2">
+  {/* Card 1 – Builders & creators */}
+  <div className="rounded-2xl bg-white/5/40 border border-white/5 p-5 shadow-sm">
+    <h3 className="text-lg font-semibold text-white">For builders & creators</h3>
+    <p className="text-slate-300 text-sm mt-2">
+      Ideal if you like designing or building real products.
+    </p>
+    <ul className="text-slate-300 text-sm mt-3 space-y-1">
+      <li>• App developers (React Native, Next.js, full-stack)</li>
+      <li>• UI/UX designers for clean mobile experiences</li>
+      <li>• Motion, illustration, video & content creators</li>
+      <li>• Social media creators & marketers</li>
+    </ul>
+  </div>
+
+  {/* Card 2 – Experts & advisors */}
+  <div className="rounded-2xl bg-white/5/40 border border-white/5 p-5 shadow-sm">
+    <h3 className="text-lg font-semibold text-white">For experts & advisors</h3>
+    <p className="text-slate-300 text-sm mt-2">
+      Ideal if you bring experience in technology, behaviour, or law and enjoy guiding early-stage work.
+    </p>
+    <ul className="text-slate-300 text-sm mt-3 space-y-1">
+      <li>• Consumer tech, AI or mobile product specialists</li>
+      <li>• Digital wellbeing / behavioural design experts</li>
+      <li>• Intellectual property & tech / apps / AI legal advisors</li>
+      <li>• Product, brand or growth advisors</li>
+    </ul>
+    <p className="text-slate-400 text-[11px] mt-3">
+      We don’t discuss sensitive or unprotected details publicly – deeper conversations happen privately and, if needed, under NDA.
+    </p>
+  </div>
+
+  {/* Card 3 – Investors & strategic partners */}
+  <div className="rounded-2xl bg-white/5/40 border border-white/5 p-5 shadow-sm">
+    <h3 className="text-lg font-semibold text-white">For investors & strategic partners</h3>
+    <p className="text-slate-300 text-sm mt-2">
+      Ideal if you’re interested in early-stage consumer technology and calm, human-first digital products.
+    </p>
+    <ul className="text-slate-300 text-sm mt-3 space-y-1">
+      <li>• Angels and early-stage investors</li>
+      <li>• Operators with app or consumer tech experience</li>
+      <li>• Strategic partners in design, distribution or growth</li>
+    </ul>
+  </div>
+
+  {/* Card 4 – Early adopters & supporters */}
+  <div className="rounded-2xl bg-white/5/40 border border-white/5 p-5 shadow-sm">
+    <h3 className="text-lg font-semibold text-white">For early adopters & supporters</h3>
+    <p className="text-slate-300 text-sm mt-2">
+      Ideal if you enjoy trying early products and shaping them with honest feedback.
+    </p>
+    <ul className="text-slate-300 text-sm mt-3 space-y-1">
+      <li>• Test prototypes and new features</li>
+      <li>• Share feedback on design and experience</li>
+      <li>• Help us prioritise what really matters</li>
+    </ul>
+  </div>
+</div>
+
+{/* Shared call-to-action */}
+<div className="mt-8 text-slate-300 text-sm">
+  <p>
+    If you’d like to collaborate in any way, please share:
+  </p>
+  <ul className="mt-2 space-y-1">
+    <li>• Your name & short bio</li>
+    <li>• Your role or specialty</li>
+    <li>• A brief overview of your experience</li>
+    <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
+    <li>• The type of collaboration you’re exploring</li>
+  </ul>
+  <p className="mt-3">
+    Email: <a href="mailto:hello@jackofai.com" className="text-sky-300">hello@jackofai.com</a>
+  </p>
+</div>
+
+	3.	Keep the “Chat with the Founder” / “Email us” buttons that already exist below this section as they are, so people still have easy CTAs.
+
+Please save all changes and rebuild/redeploy the site.
+
+Thanks!
+
+---
+
+### Why this will feel better
+
+- Same *meaning*, **half the perceived heaviness**  
+- Four clear cards → each audience immediately finds “their” box  
+- Safer visually: no one has to read a long block to know if they’re relevant  
+- You still have **one simple intake flow** (email with bio + links)  
+- It looks more premium and intentional on the page
+
+Once this is live, we can do **small, focused pages** later (Experts, Early Access, etc.) if you want deeper detail — but the homepage will already be doing the right job.
+
+If you show me a screenshot after this change, I can fine-tune wording/spacing one last time so it feels founder-perfect.

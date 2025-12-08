@@ -367,62 +367,82 @@ export default function LandingPage() {
           <h2 className="text-xl md:text-3xl font-semibold">
             Work with us: talent & collaborators
           </h2>
-          <div className="glass-card p-6 md:p-8 space-y-6">
-            <p className="text-base text-slate-300">
-              We're building thoughtful digital experiences and growing a small, intentional team. 
-              If you enjoy creating simple, human-centered products — or if you have expertise that can help us build responsibly — we'd love to connect.
-            </p>
+          <p className="text-base text-slate-300">
+            We're growing a small, intentional network of people who enjoy creating simple, human-centered digital products. 
+            Whether you build, design, advise, invest, or test early ideas — we'd love to connect.
+          </p>
 
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-slate-100">Talent & Creators</h3>
-              <ul className="text-base text-slate-300 space-y-1">
+          <div className="grid gap-4 md:grid-cols-2">
+            {/* Card 1 – Builders & creators */}
+            <div className="glass-card p-5 space-y-3">
+              <h3 className="text-lg font-semibold text-slate-100">For builders & creators</h3>
+              <p className="text-sm text-slate-300">
+                Ideal if you like designing or building real products.
+              </p>
+              <ul className="text-sm text-slate-300 space-y-1">
                 <li>• App developers (React Native, Next.js, full-stack)</li>
-                <li>• UI/UX designers for modern, clean mobile apps</li>
-                <li>• Motion designers, illustrators & video creators</li>
-                <li>• Social media creators, marketers & influencers</li>
+                <li>• UI/UX designers for clean mobile experiences</li>
+                <li>• Motion, illustration, video & content creators</li>
+                <li>• Social media creators & marketers</li>
               </ul>
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-slate-100">Experts & Advisors</h3>
-              <p className="text-base text-slate-300">
-                We welcome conversations with people experienced in technology, consumer apps, AI-assisted product development, 
-                digital wellbeing, and behavioural design. 
-                We're also open to connecting with intellectual property specialists for guidance around protecting technology and app-related innovations.
-                We do not discuss sensitive or unprotected details publicly — all deeper conversations happen privately and under NDA if needed.
+            {/* Card 2 – Experts & advisors */}
+            <div className="glass-card p-5 space-y-3">
+              <h3 className="text-lg font-semibold text-slate-100">For experts & advisors</h3>
+              <p className="text-sm text-slate-300">
+                Ideal if you bring experience in technology, behaviour, or law and enjoy guiding early-stage work.
+              </p>
+              <ul className="text-sm text-slate-300 space-y-1">
+                <li>• Consumer tech, AI or mobile product specialists</li>
+                <li>• Digital wellbeing / behavioural design experts</li>
+                <li>• Intellectual property & tech / apps / AI legal advisors</li>
+                <li>• Product, brand or growth advisors</li>
+              </ul>
+              <p className="text-xs text-slate-400">
+                We don't discuss sensitive or unprotected details publicly — deeper conversations happen privately and, if needed, under NDA.
               </p>
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-slate-100">Investors & Strategic Partners</h3>
-              <p className="text-base text-slate-300">
-                If you're interested in early-stage consumer technology, calm digital experiences, or AI-powered creative tools, 
-                we're open to thoughtful early conversations as we shape our product family.
+            {/* Card 3 – Investors & strategic partners */}
+            <div className="glass-card p-5 space-y-3">
+              <h3 className="text-lg font-semibold text-slate-100">For investors & strategic partners</h3>
+              <p className="text-sm text-slate-300">
+                Ideal if you're interested in early-stage consumer technology and calm, human-first digital products.
               </p>
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-slate-100">Early adopters & supporters</h3>
-              <p className="text-base text-slate-300">
-                If you enjoy testing early products and sharing honest feedback, you're welcome to join our early adopter list. 
-                You'll be invited to try prototypes, share insights, and help shape new features as they evolve.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <h3 className="text-lg font-semibold text-slate-100">Share your details</h3>
-              <p className="text-base text-slate-300">
-                If you'd like to collaborate, please share:
-              </p>
-              <ul className="text-base text-slate-300 space-y-1">
-                <li>• Your name & short bio</li>
-                <li>• Your role or specialty</li>
-                <li>• A brief overview of your experience</li>
-                <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
-                <li>• The type of collaboration you're exploring</li>
+              <ul className="text-sm text-slate-300 space-y-1">
+                <li>• Angels and early-stage investors</li>
+                <li>• Operators with app or consumer tech experience</li>
+                <li>• Strategic partners in design, distribution or growth</li>
               </ul>
             </div>
 
+            {/* Card 4 – Early adopters & supporters */}
+            <div className="glass-card p-5 space-y-3">
+              <h3 className="text-lg font-semibold text-slate-100">For early adopters & supporters</h3>
+              <p className="text-sm text-slate-300">
+                Ideal if you enjoy trying early products and shaping them with honest feedback.
+              </p>
+              <ul className="text-sm text-slate-300 space-y-1">
+                <li>• Test prototypes and new features</li>
+                <li>• Share feedback on design and experience</li>
+                <li>• Help us prioritise what really matters</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Shared call-to-action */}
+          <div className="glass-card p-5 space-y-3">
+            <p className="text-base text-slate-300">
+              If you'd like to collaborate in any way, please share:
+            </p>
+            <ul className="text-sm text-slate-300 space-y-1">
+              <li>• Your name & short bio</li>
+              <li>• Your role or specialty</li>
+              <li>• A brief overview of your experience</li>
+              <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
+              <li>• The type of collaboration you're exploring</li>
+            </ul>
             <div className="flex flex-wrap gap-3 pt-2">
               <PrimaryButton href="mailto:hello@jackofai.com?subject=Collaboration%20Inquiry">
                 Email us
