@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Copy, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import jackofaiLogo from "@assets/image_1765153923649.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -98,17 +99,14 @@ export default function LandingPage() {
 
       <div className="container py-10 md:py-16 space-y-20 md:space-y-28">
         <header className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-2xl bg-gradient-to-tr from-cyan-400 via-sky-500 to-rose-400 shadow-soft-glow" />
-            <div className="flex flex-col">
-              <span className="text-sm font-semibold tracking-wide" data-testid="brand-name">
-                JackofAI<span className="align-super text-[10px]">™</span>
-              </span>
-              <span className="text-xs text-slate-400">
-                Warm, simple AI products
-              </span>
-            </div>
-          </div>
+          <a href="#" className="flex items-center" data-testid="logo-link">
+            <img 
+              src={jackofaiLogo} 
+              alt="JackofAI Logo" 
+              className="h-8 md:h-10 w-auto select-none"
+              data-testid="brand-logo"
+            />
+          </a>
 
           <nav className="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300" data-testid="desktop-nav">
             <a href="#products" className="hover:text-sky-300">
@@ -551,9 +549,13 @@ export default function LandingPage() {
         </AnimatedSection>
 
         <footer className="border-t border-white/5 pt-6 pb-10 text-xs text-slate-500 flex flex-col md:flex-row md:items-center md:justify-between gap-3" data-testid="footer">
-          <div>
-            JackofAI<span className="align-super text-[8px]">™</span> ·{" "}
-            {new Date().getFullYear()}
+          <div className="flex items-center gap-2">
+            <img 
+              src={jackofaiLogo} 
+              alt="JackofAI" 
+              className="h-5 w-auto opacity-60"
+            />
+            <span>· {new Date().getFullYear()}</span>
           </div>
           <div className="flex flex-wrap gap-4">
             <a href="#" className="hover:text-sky-300">
