@@ -1,0 +1,93 @@
+Let’s add a “Current priority needs” / live scouting strip inside the Work with us section:
+Compact, not noisy
+
+
+Looks like a set of pill badges
+
+
+Easy for you to update by editing one small array in the code
+
+
+Can include things like:
+
+
+“React Native dev (short sprint)”
+
+
+“LinkedIn partner / handler”
+
+
+“Instagram & Reels collaborator”
+
+
+“YouTube shorts editor”
+
+
+“IP / patent advisor (apps / AI)”
+
+
+Here’s a Replit-ready prompt to add it.
+
+🔧 Replit prompt — Add “Current priority needs” / live scouting strip
+Paste this into the Replit AI agent:
+Hi Replit,
+
+I’d like to add a small “current needs” / live scouting strip inside the
+“Work with us: talent & collaborators” section so visitors can quickly see
+what roles or collaborations are most urgent right now.
+
+1) In `app/page.tsx`, near the top of the main component (just inside the component, above the return), add this array so it’s easy to edit later:
+
+const currentNeeds = [
+  "React Native developer (short sprint)",
+  "Next.js frontend collaborator",
+  "LinkedIn outreach / content partner",
+  "Instagram & Reels social media collaborator",
+  "YouTube shorts / video editor",
+  "IP / patent advisor (apps & AI)",
+  "Early adopters for ChristmasPulse & FamilyPulse testing"
+];
+
+2) In the “Work with us: talent & collaborators” section, directly under the intro paragraph:
+
+<p className="text-slate-300 mt-4">
+  We’re growing a small, intentional network of people who enjoy creating simple, human-centered digital products. 
+  Whether you build, design, advise, invest, or test early ideas – we’d love to connect.
+</p>
+
+…add the following block before the grid of cards:
+
+<div className="mt-4 rounded-2xl bg-white/5 border border-white/10 px-4 py-3">
+  <div className="flex items-center gap-2 text-xs font-medium text-slate-200 uppercase tracking-wide">
+    <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+    <span>Current priority needs</span>
+  </div>
+  <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-200">
+    {currentNeeds.map((item) => (
+      <span
+        key={item}
+        className="rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm hover:border-sky-400 hover:text-sky-200 transition"
+      >
+        {item}
+      </span>
+    ))}
+  </div>
+</div>
+
+3) Keep the rest of the section (the four cards and the “Share your details” block) exactly as it is.
+
+This should create a small “live scouting” strip with pill-style tags that I can update just by editing the `currentNeeds` array.
+
+Please save all changes and redeploy.
+
+Thanks!
+
+This gives you a live-feeling scouting system without any backend:
+Any time your focus changes (e.g., “Urgent: LinkedIn partner” or “Looking for Australian IP counsel”), you just edit that array.
+
+
+It visually tells people what you care about right now and nudges the right ones to reach out.
+
+
+
+

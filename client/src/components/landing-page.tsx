@@ -74,6 +74,16 @@ function SecondaryButton({
   );
 }
 
+const currentNeeds = [
+  "React Native developer (short sprint)",
+  "Next.js frontend collaborator",
+  "LinkedIn outreach / content partner",
+  "Instagram & Reels social media collaborator",
+  "YouTube shorts / video editor",
+  "IP / patent advisor (apps & AI)",
+  "Early adopters for ChristmasPulse & FamilyPulse testing"
+];
+
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isFounderChatOpen, setIsFounderChatOpen] = useState(false);
@@ -371,6 +381,25 @@ export default function LandingPage() {
             We're growing a small, intentional network of people who enjoy creating simple, human-centered digital products. 
             Whether you build, design, advise, invest, or test early ideas — we'd love to connect.
           </p>
+
+          {/* Current Priority Needs Strip */}
+          <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-3" data-testid="current-needs-strip">
+            <div className="flex items-center gap-2 text-xs font-medium text-slate-200 uppercase tracking-wide">
+              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Current priority needs</span>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-200">
+              {currentNeeds.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm hover:border-sky-400 hover:text-sky-200 transition"
+                  data-testid={`need-pill-${item.slice(0, 15).replace(/\s/g, "-").toLowerCase()}`}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
 
           <div className="grid gap-4 md:grid-cols-2">
             {/* Card 1 – Builders & creators */}
