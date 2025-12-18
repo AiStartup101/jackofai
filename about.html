@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>About - JackOfAI.com</title>
+  <meta name="description" content="About JackofAI - A small, founder-led studio exploring how simple digital tools can help people feel more connected." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      padding: 0;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #020617, #0f172a, #020617);
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 5rem 1rem;
+    }
+
+    .back-link {
+      font-size: 0.875rem;
+      color: #7dd3fc;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      display: inline-block;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #bae6fd;
+    }
+
+    h1 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #fff;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding-top: 2.5rem;
+      margin-top: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a href="index.html" class="back-link">← Back to home</a>
+    
+    <h1>About JackofAI</h1>
+
+    <p>
+      JackofAI™ is a small, founder-led studio exploring how simple digital tools 
+      can help people feel more connected – to themselves, to their families, and to the moments that matter.
+    </p>
+
+    <p>
+      Instead of building loud, overwhelming apps, we focus on calm, warm experiences: 
+      tools that fit quietly into everyday life and support reflection, celebration, and togetherness.
+    </p>
+
+    <h2>What we're building</h2>
+    <p>
+      We're starting with a small family of apps currently in development:
+    </p>
+    <ul>
+      <li>
+        <strong>ChristmasPulse</strong> – a festive app designed to help people create warm, heartfelt 
+        Christmas moments with cards, messages, and shared memories.
+      </li>
+      <li>
+        <strong>FamilyPulse</strong> – a calm, everyday app that supports emotional connection within families 
+        through gentle reflection, communication, and rituals.
+      </li>
+    </ul>
+    <p style="font-size: 0.875rem; color: #94a3b8;">
+      Details may evolve as we learn and build. We share only high-level product stories publicly; anything deeper happens privately.
+    </p>
+
+    <h2>How we like to build</h2>
+    <ul>
+      <li>Small, focused releases instead of big, noisy launches.</li>
+      <li>Design that feels warm, clear, and human – even when powered by AI under the surface.</li>
+      <li>Meaningful collaborations with builders, creators, experts, and early adopters.</li>
+    </ul>
+
+    <p>
+      If this direction resonates with you, we'd love to connect – whether you're a collaborator, expert, investor, or early supporter.
+    </p>
+
+    <div class="footer">
+      <p>© <span id="currentYear"></span> JackofAI Pty Ltd. All rights reserved.</p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

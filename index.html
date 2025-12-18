@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>JackOfAI.com — Ideas First, AI Always | Transforming Visionary AI Concepts Into Impactful Products</title>
+  <meta name="description" content="Melbourne-based AI entrepreneur specializing in discovering, validating, and launching innovative AI products. Ideas first, AI always." />
+  <meta property="og:title" content="JackOfAI.com — Ideas First, AI Always" />
+  <meta property="og:description" content="Transforming Visionary AI Concepts Into Impactful Products. Melbourne-based AI entrepreneur specializing in discovering, validating, and launching innovative AI products." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jackofai.com" />
+  <link rel="canonical" href="https://jackofai.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      color-scheme: dark;
+      --background: hsl(224, 71%, 4%);
+      --foreground: hsl(213, 31%, 91%);
+      --primary: hsl(199, 89%, 48%);
+      --jack-bg: #050816;
+      --jack-card: rgba(15, 23, 42, 0.85);
+    }
+
+    html, body {
+      padding: 0;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #020617, #0f172a, #020617);
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Background gradient effects */
+    .bg-gradient-overlay {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+    }
+
+    .bg-gradient-overlay::before {
+      content: '';
+      position: absolute;
+      top: -8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 18rem;
+      width: 18rem;
+      border-radius: 50%;
+      background: rgba(6, 182, 212, 0.2);
+      filter: blur(96px);
+    }
+
+    .bg-gradient-overlay::after {
+      content: '';
+      position: absolute;
+      top: 10rem;
+      left: -4rem;
+      height: 16rem;
+      width: 16rem;
+      border-radius: 50%;
+      background: rgba(52, 211, 153, 0.1);
+      filter: blur(96px);
+    }
+
+    /* Glass card effect */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 1.5rem;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(to right, #67e8f9, #7dd3fc, #fda4af);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: #38bdf8;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0f172a;
+      box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 2.5rem 0 2rem;
+    }
+
+    .logo-link {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      text-decoration: none;
+    }
+
+    .logo-link img {
+      height: 2.5rem;
+      width: auto;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .logo-link img {
+        height: 3rem;
+      }
+    }
+
+    .logo-tagline {
+      font-size: 0.625rem;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+    }
+
+    @media (min-width: 768px) {
+      .logo-tagline {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Navigation */
+    nav.desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #cbd5e1;
+    }
+
+    @media (min-width: 768px) {
+      nav.desktop-nav {
+        display: flex;
+      }
+    }
+
+    nav.desktop-nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav.desktop-nav a:hover {
+      color: #7dd3fc;
+    }
+
+    .mobile-menu-toggle {
+      display: block;
+      padding: 0.5rem;
+      color: #cbd5e1;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-toggle {
+        display: none;
+      }
+    }
+
+    .mobile-menu-toggle:hover {
+      color: #fff;
+    }
+
+    .mobile-nav {
+      display: block;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-nav {
+        display: none;
+      }
+    }
+
+    .mobile-nav.hidden {
+      display: none;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 0.75rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .mobile-nav a:hover {
+      color: #7dd3fc;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 5rem;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        margin-bottom: 7rem;
+      }
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      h2 {
+        font-size: 1.875rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Hero section */
+    .hero-grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 3fr 2fr;
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-badge {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(125, 211, 252, 0.8);
+    }
+
+    .hero-description {
+      max-width: 36rem;
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    @media (min-width: 768px) {
+      .hero-description {
+        font-size: 1.125rem;
+      }
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 0.5rem;
+    }
+
+    /* Product teaser card */
+    .product-teaser {
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .product-teaser {
+        padding: 1.75rem;
+      }
+    }
+
+    .product-teaser > * + * {
+      margin-top: 1.25rem;
+    }
+
+    .product-teaser-badge {
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #7dd3fc;
+    }
+
+    .product-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .product-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .product-item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .product-tag {
+      border-radius: 9999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .product-tag.festive {
+      background: rgba(14, 165, 233, 0.1);
+      color: #7dd3fc;
+    }
+
+    .product-tag.family {
+      background: rgba(244, 63, 94, 0.1);
+      color: #fda4af;
+    }
+
+    .product-divider {
+      height: 1px;
+      background: linear-gradient(to right, rgba(14, 165, 233, 0.4), rgba(100, 116, 139, 0.2), rgba(244, 63, 94, 0.4));
+    }
+
+    .product-item-description {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    /* Newsletter signup */
+    .newsletter-signup {
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.25rem;
+      max-width: 42rem;
+    }
+
+    .newsletter-signup h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-signup p {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      margin-top: 0.5rem;
+    }
+
+    .newsletter-form {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .newsletter-form {
+        flex-direction: row;
+      }
+    }
+
+    .newsletter-input {
+      flex: 1;
+      border-radius: 0.75rem;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      color: #f1f5f9;
+    }
+
+    .newsletter-input::placeholder {
+      color: #64748b;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      ring: 2px;
+      ring-color: #38bdf8;
+    }
+
+    .newsletter-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      background: #0ea5e9;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .newsletter-submit:hover:not(:disabled) {
+      background: #38bdf8;
+    }
+
+    .newsletter-submit:disabled {
+      opacity: 0.6;
+    }
+
+    .newsletter-message {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .newsletter-message.success {
+      color: #6ee7b7;
+    }
+
+    .newsletter-message.error {
+      color: #fda4af;
+    }
+
+    /* Products section */
+    .products-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .product-card {
+      padding: 1.5rem;
+    }
+
+    .product-card > * + * {
+      margin-top: 1rem;
+    }
+
+    .product-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .product-card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .product-card-emoji {
+      font-size: 1.25rem;
+    }
+
+    .product-card-subtitle {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+    }
+
+    .product-tag.coming-soon {
+      background: rgba(16, 185, 129, 0.1);
+      color: #6ee7b7;
+    }
+
+    /* Current needs strip */
+    .current-needs-strip {
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 1rem;
+    }
+
+    .current-needs-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pulse-dot {
+      display: inline-flex;
+      height: 0.5rem;
+      width: 0.5rem;
+      border-radius: 50%;
+      background: #34d399;
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .needs-pills {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: #e2e8f0;
+    }
+
+    .need-pill {
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.25rem 0.75rem;
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+
+    .need-pill:hover {
+      border-color: #38bdf8;
+      color: #bae6fd;
+    }
+
+    /* Talent cards */
+    .talent-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .talent-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .talent-card {
+      padding: 1.25rem;
+    }
+
+    .talent-card > * + * {
+      margin-top: 0.75rem;
+    }
+
+    .talent-card ul {
+      list-style: none;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    .talent-card ul li {
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-main {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-main {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .footer-brand-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+
+    .footer-brand-tagline {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #e2e8f0;
+    }
+
+    .footer-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #7dd3fc;
+    }
+
+    /* WhatsApp floating button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: #34d399;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #0f172a;
+      box-shadow: 0 10px 15px -3px rgba(52, 211, 153, 0.4);
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      background: #6ee7b7;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 28rem;
+      width: 100%;
+      margin: 0 1rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      color: #94a3b8;
+      background: none;
+      border: none;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: #e2e8f0;
+    }
+
+    .modal-content > * + * {
+      margin-top: 1rem;
+    }
+
+    /* Copy email button */
+    .copy-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .copy-email-btn svg {
+      height: 1rem;
+      width: 1rem;
+    }
+
+    .copy-email-btn.copied svg {
+      color: #34d399;
+    }
+
+    /* Social links */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    .social-link {
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.25rem 0.75rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: #38bdf8;
+      color: #7dd3fc;
+    }
+
+    /* Utility classes */
+    .text-sm { font-size: 0.875rem; }
+    .text-base { font-size: 1rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .font-semibold { font-weight: 600; }
+    .font-medium { font-weight: 500; }
+    .text-slate-100 { color: #f1f5f9; }
+    .text-slate-200 { color: #e2e8f0; }
+    .text-slate-300 { color: #cbd5e1; }
+    .text-slate-400 { color: #94a3b8; }
+    .space-y-3 > * + * { margin-top: 0.75rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-5 > * + * { margin-top: 1.25rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+    .max-w-xl { max-width: 36rem; }
+    .max-w-2xl { max-width: 42rem; }
+    .mt-1 { margin-top: 0.25rem; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .pt-2 { padding-top: 0.5rem; }
+    .pt-3 { padding-top: 0.75rem; }
+    .pt-4 { padding-top: 1rem; }
+    .hidden { display: none; }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient-overlay"></div>
+
+  <main class="container" style="padding-top: 2.5rem; padding-bottom: 2.5rem;">
+    <header>
+      <a href="#" class="logo-link">
+        <img src="logo.jpeg" alt="JackofAI Logo" />
+        <span class="logo-tagline">Warm, simple AI products</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#products">Products</a>
+        <a href="#talent">Talent</a>
+        <a href="early-access.html">Early Access</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path id="menuIcon" d="M3 12h18M3 6h18M3 18h18"/>
+          <path id="closeIcon" class="hidden" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </header>
+
+    <nav class="mobile-nav hidden" id="mobileNav">
+      <a href="#products" onclick="closeMobileMenu()">Products</a>
+      <a href="#talent" onclick="closeMobileMenu()">Talent</a>
+      <a href="early-access.html" onclick="closeMobileMenu()">Early Access</a>
+      <a href="about.html" onclick="closeMobileMenu()">About</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    </nav>
+
+    <section class="fade-in-up hero-grid">
+      <div class="hero-content">
+        <p class="hero-badge">JackofAI<span style="vertical-align: super; font-size: 0.625rem;">™</span> Studio</p>
+        <h1>We build <span class="gradient-text">warm, simple AI apps</span> that bring people closer.</h1>
+        <p class="hero-description">
+          JackofAI™ is a creative technology studio shaping meaningful
+          digital experiences — starting with ChristmasPulse and
+          FamilyPulse.
+        </p>
+        <p class="text-slate-300 text-sm sm:text-base">
+          We focus on small, calm products that support reflection, celebration, and everyday connection – not more noise.
+        </p>
+
+        <div class="button-group">
+          <a href="#products" class="btn-primary">Explore ChristmasPulse</a>
+          <a href="#products" class="btn-secondary">Explore FamilyPulse</a>
+        </div>
+
+        <div class="button-group">
+          <a href="#early-adopters" class="btn-secondary">Join Early Access</a>
+          <a href="#talent" class="btn-secondary">Work With Us</a>
+        </div>
+      </div>
+
+      <div class="glass-card product-teaser">
+        <p class="product-teaser-badge">Coming Soon</p>
+        <div class="product-item">
+          <div class="product-item-header">
+            <span class="product-item-title">ChristmasPulse</span>
+            <span class="product-tag festive">Festive app</span>
+          </div>
+          <p class="product-item-description">
+            A joyful digital experience designed to help people create warm,
+            heartfelt Christmas moments — cards, messages, and shared
+            memories made easy.
+          </p>
+        </div>
+
+        <div class="product-divider"></div>
+
+        <div class="product-item">
+          <div class="product-item-header">
+            <span class="product-item-title">FamilyPulse</span>
+            <span class="product-tag family">Family app</span>
+          </div>
+          <p class="product-item-description">
+            A simple, calming app focused on supporting everyday emotional
+            connection within families — gentle reflection, communication,
+            and togetherness.
+          </p>
+        </div>
+
+        <div class="pt-3 text-xs text-slate-400">
+          Both products are currently in development. Join as an early
+          adopter, collaborator, or supporter.
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in-up">
+      <div class="newsletter-signup">
+        <h3>Get updates & early access</h3>
+        <p>Be the first to hear about new apps, early access invites, and collaboration opportunities.</p>
+        <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+          <input
+            type="email"
+            required
+            placeholder="Your email address"
+            class="newsletter-input"
+            id="newsletterEmail"
+          />
+          <button type="submit" class="newsletter-submit" id="newsletterSubmit">
+            Get updates
+          </button>
+        </form>
+        <p class="newsletter-message hidden" id="newsletterMessage"></p>
+      </div>
+    </section>
+
+    <section id="products" class="fade-in-up space-y-6">
+      <h2>Our upcoming apps</h2>
+      <p class="max-w-2xl text-base text-slate-300">
+        We're starting with two focused experiences: one for Christmas
+        joy, and one for quiet everyday connection at home.
+      </p>
+
+      <div class="products-grid">
+        <div class="glass-card product-card">
+          <div class="product-card-header">
+            <div class="product-card-title-group">
+              <span class="product-card-emoji">🎄</span>
+              <div>
+                <h3>ChristmasPulse — Coming Soon</h3>
+                <p class="product-card-subtitle">Festive, warm, creative</p>
+              </div>
+            </div>
+            <span class="product-tag coming-soon">Coming soon</span>
+          </div>
+          <p class="text-base text-slate-300">
+            A joyful digital experience designed to help people create warm,
+            heartfelt Christmas moments — cards, messages, and shared
+            memories made easy.
+          </p>
+          <div class="button-group pt-2">
+            <a href="https://christmaspulse.com" class="btn-primary">Visit ChristmasPulse.com</a>
+            <a href="#early-adopters" class="btn-secondary">Join waitlist</a>
+          </div>
+        </div>
+
+        <div class="glass-card product-card">
+          <div class="product-card-header">
+            <div class="product-card-title-group">
+              <span class="product-card-emoji">❤️</span>
+              <div>
+                <h3>FamilyPulse — Coming Soon</h3>
+                <p class="product-card-subtitle">Calm, daily, grounded</p>
+              </div>
+            </div>
+            <span class="product-tag family">Coming soon</span>
+          </div>
+          <p class="text-base text-slate-300">
+            A simple, calming app focused on supporting everyday emotional
+            connection within families — gentle reflection, communication,
+            and togetherness.
+          </p>
+          <div class="button-group pt-2">
+            <a href="https://familypulse.live" class="btn-primary">Visit FamilyPulse.live</a>
+            <a href="#early-adopters" class="btn-secondary">Join waitlist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fade-in-up space-y-4">
+      <h2>Our philosophy</h2>
+      <div class="glass-card" style="padding: 1.5rem;">
+        <p class="text-base md:text-lg font-medium">
+          Technology feels best when it feels human.
+        </p>
+        <p class="text-base text-slate-300">
+          We believe digital products should make life warmer — not louder.
+          That's why we build small, simple apps with emotional clarity
+          and thoughtful design at their core.
+        </p>
+        <div class="talent-grid" style="margin-top: 1rem;">
+          <div>
+            <p class="font-semibold text-slate-100">Warm design</p>
+            <p class="text-slate-300 text-sm mt-1">
+              Intuitive, human, emotionally grounded experiences that feel
+              calm rather than overwhelming.
+            </p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-100">Simple experiences</p>
+            <p class="text-slate-300 text-sm mt-1">
+              Tiny apps with meaningful moments — focused, deliberate, and
+              easy to return to.
+            </p>
+          </div>
+          <div>
+            <p class="font-semibold text-slate-100">Real connection</p>
+            <p class="text-slate-300 text-sm mt-1">
+              Tools that bring people closer every day, rather than pulling
+              attention away from what matters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="talent" class="fade-in-up space-y-4">
+      <h2>Work with us: talent & collaborators</h2>
+      <p class="text-base text-slate-300">
+        We're growing a small, intentional network of people who enjoy creating simple, human-centered digital products. 
+        Whether you build, design, advise, invest, or test early ideas — we'd love to connect.
+      </p>
+
+      <div class="current-needs-strip">
+        <div class="current-needs-header">
+          <span class="pulse-dot"></span>
+          <span>Current priority needs</span>
+        </div>
+        <div class="needs-pills">
+          <span class="need-pill">React Native developer (short sprint)</span>
+          <span class="need-pill">Next.js frontend collaborator</span>
+          <span class="need-pill">UI/UX designer for calm mobile apps</span>
+          <span class="need-pill">Instagram & Reels collaborator</span>
+          <span class="need-pill">YouTube shorts / video editor</span>
+          <span class="need-pill">IP / patent advisor (apps & AI)</span>
+          <span class="need-pill">Early adopters for ChristmasPulse & FamilyPulse testing</span>
+        </div>
+      </div>
+
+      <div class="talent-grid">
+        <div class="glass-card talent-card">
+          <h3 class="text-lg font-semibold text-slate-100">For builders & creators</h3>
+          <p class="text-sm text-slate-300">
+            Ideal if you like designing or building real products.
+          </p>
+          <ul>
+            <li>• App developers (React Native, Next.js, full-stack)</li>
+            <li>• UI/UX designers for clean mobile experiences</li>
+            <li>• Motion, illustration, video & content creators</li>
+            <li>• Social media creators & marketers</li>
+          </ul>
+        </div>
+
+        <div class="glass-card talent-card">
+          <h3 class="text-lg font-semibold text-slate-100">For experts & advisors</h3>
+          <p class="text-sm text-slate-300">
+            Ideal if you bring experience in technology, behaviour, or law and enjoy guiding early-stage work.
+          </p>
+          <ul>
+            <li>• Consumer tech, AI or mobile product specialists</li>
+            <li>• Digital wellbeing / behavioural design experts</li>
+            <li>• Intellectual property & tech / apps / AI legal advisors</li>
+            <li>• Product, brand or growth advisors</li>
+          </ul>
+          <p class="text-xs text-slate-400">
+            We don't discuss sensitive or unprotected details publicly — deeper conversations happen privately and, if needed, under NDA.
+          </p>
+        </div>
+
+        <div class="glass-card talent-card">
+          <h3 class="text-lg font-semibold text-slate-100">For investors & strategic partners</h3>
+          <p class="text-sm text-slate-300">
+            Ideal if you're interested in early-stage consumer technology and calm, human-first digital products.
+          </p>
+          <ul>
+            <li>• Angels and early-stage investors</li>
+            <li>• Operators with app or consumer tech experience</li>
+            <li>• Strategic partners in design, distribution or growth</li>
+          </ul>
+        </div>
+
+        <div class="glass-card talent-card">
+          <h3 class="text-lg font-semibold text-slate-100">For early adopters & supporters</h3>
+          <p class="text-sm text-slate-300">
+            Ideal if you enjoy trying early products and shaping them with honest feedback.
+          </p>
+          <ul>
+            <li>• Test prototypes and new features</li>
+            <li>• Share feedback on design and experience</li>
+            <li>• Help us prioritise what really matters</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-card" style="padding: 1.25rem;">
+        <p class="text-base text-slate-300">
+          If you'd like to collaborate in any way, please share:
+        </p>
+        <ul class="text-sm text-slate-300 space-y-1" style="margin-top: 0.75rem;">
+          <li>• Your name & short bio</li>
+          <li>• Your role or specialty</li>
+          <li>• A brief overview of your experience</li>
+          <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
+          <li>• The type of collaboration you're exploring</li>
+        </ul>
+        <div class="button-group pt-2">
+          <a href="mailto:hello@jackofai.com?subject=Collaboration%20Inquiry" class="btn-primary">Email us</a>
+          <button onclick="openFounderChat()" class="btn-secondary">Chat with the Founder</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder" class="fade-in-up space-y-4">
+      <h2>A note from the founder</h2>
+      <div class="glass-card" style="padding: 1.5rem;">
+        <p class="text-base text-slate-300">
+          I started JackofAI™ to build simple, warm digital tools that help
+          people feel more connected — to themselves, to their families, and
+          to the moments that matter.
+        </p>
+        <p class="text-base text-slate-300">
+          The world doesn't need more complex apps. It needs softer,
+          calmer, more human technology.
+        </p>
+        <p class="text-base text-slate-300">
+          If our mission resonates with you — whether you're a
+          creator, collaborator, investor, or early supporter — I'd
+          love to connect.
+        </p>
+        <p class="text-base font-medium text-slate-100">— Bhavik Patel</p>
+      </div>
+    </section>
+
+    <section id="contact" class="fade-in-up space-y-4">
+      <h2>Contact</h2>
+      <div class="glass-card" style="padding: 1.5rem;">
+        <p class="text-base text-slate-300">
+          For collaborations, talent opportunities, early access, or investor conversations,
+          you can reach JackofAI™ here:
+        </p>
+        <div class="space-y-1 text-slate-100" style="margin-top: 1rem;">
+          <p>
+            <span class="font-semibold">Email: </span>
+            <a href="mailto:hello@jackofai.com" class="text-sky-300 hover:text-sky-200" style="color: #7dd3fc;">hello@jackofai.com</a>
+          </p>
+          <p>
+            <span class="font-semibold">Phone: </span>
+            <a href="tel:+61426996009" class="text-sky-300 hover:text-sky-200" style="color: #7dd3fc;">+61 426 996 009</a>
+          </p>
+          <p>
+            <span class="font-semibold">WhatsApp: </span>
+            <a
+              href="https://wa.me/61426996009"
+              class="text-sky-300 hover:text-sky-200"
+              target="_blank"
+              rel="noreferrer"
+              style="color: #7dd3fc;"
+            >
+              Chat on WhatsApp
+            </a>
+          </p>
+        </div>
+
+        <div class="social-links" style="margin-top: 1rem;">
+          <span class="text-slate-400">Find us:</span>
+          <a href="https://www.linkedin.com/company/jackofai" target="_blank" rel="noreferrer" class="social-link">LinkedIn</a>
+          <a href="https://instagram.com/jackofai" target="_blank" rel="noreferrer" class="social-link">Instagram</a>
+          <a href="https://youtube.com/@jackofai" target="_blank" rel="noreferrer" class="social-link">YouTube</a>
+          <a href="https://github.com/jackofai" target="_blank" rel="noreferrer" class="social-link">GitHub</a>
+        </div>
+
+        <div class="button-group pt-2">
+          <a href="mailto:hello@jackofai.com" class="btn-secondary">Email JackofAI</a>
+          <a href="https://wa.me/61426996009" class="btn-secondary">Chat on WhatsApp</a>
+          <button onclick="copyEmail()" class="btn-secondary copy-email-btn" id="copyEmailBtn">
+            <svg id="copyIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="copyText">Copy Email</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="footer-brand-name">JackofAI<span style="vertical-align: super; font-size: 0.625rem;">™</span> Pty Ltd.</span>
+          <span class="footer-brand-tagline">Warm, simple AI products that bring people closer.</span>
+          <span class="footer-copyright">© <span id="currentYear"></span> JackofAI Pty Ltd. All rights reserved.</span>
+        </div>
+
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="#products">Products</a>
+          <a href="#talent">Talent</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="/opportunities">Opportunities</a>
+        <a href="early-access.html">Early Access</a>
+        <a href="/founder">Founder</a>
+        <a href="/press">Press</a>
+      </div>
+
+      <div class="footer-links" style="color: #94a3b8;">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms & Conditions</a>
+        <a href="/cookies">Cookie Notice</a>
+        <a href="/ai-disclaimer">AI Disclaimer</a>
+      </div>
+    </footer>
+  </main>
+
+  <a
+    href="https://wa.me/61426996009"
+    class="whatsapp-float"
+    aria-label="Chat on WhatsApp"
+    target="_blank"
+    rel="noreferrer"
+  >
+    💬 Chat on WhatsApp
+  </a>
+
+  <div class="modal-overlay" id="founderChatModal" onclick="closeFounderChat(event)">
+    <div class="glass-card modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeFounderChat()" aria-label="Close founder chat">✕</button>
+      <h2 class="text-xl font-semibold text-slate-100">Chat with the founder</h2>
+      <p class="text-base text-slate-300">
+        Hi, I'm Bhavik. I started JackofAI™ to build simple, warm digital tools
+        that help people feel more connected. I'd love to hear who you are and
+        how you'd like to be involved — as a collaborator, early adopter, or
+        investor.
+      </p>
+      <div class="space-y-2 text-base text-slate-100">
+        <p>
+          <span class="font-semibold">WhatsApp: </span>
+          <a
+            href="https://wa.me/61426996009?text=Hi%20Bhavik%2C%20I%20just%20visited%20JackofAI.com%20and%20would%20love%20to%20connect."
+            class="text-sky-300 hover:text-sky-200"
+            target="_blank"
+            rel="noreferrer"
+            style="color: #7dd3fc;"
+          >
+            Chat on WhatsApp
+          </a>
+        </p>
+        <p>
+          <span class="font-semibold">Phone: </span>
+          <a
+            href="tel:+61426996009"
+            class="text-sky-300 hover:text-sky-200"
+            style="color: #7dd3fc;"
+          >
+            +61 426 996 009
+          </a>
+        </p>
+        <p>
+          <span class="font-semibold">Email: </span>
+          <a
+            href="mailto:hello@jackofai.com?subject=JackofAI%20Founder%20Chat"
+            class="text-sky-300 hover:text-sky-200"
+            style="color: #7dd3fc;"
+          >
+            hello@jackofai.com
+          </a>
+        </p>
+      </div>
+      <div class="pt-2" style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 0.5rem;">
+        <p class="text-xs text-slate-400">
+          Tip: When you reach out, feel free to mention whether you're a
+          developer, designer, early adopter, or investor, and what you'd like
+          to explore together.
+        </p>
+      </div>
+      <div style="display: flex; justify-content: flex-end; padding-top: 0.5rem;">
+        <button onclick="closeFounderChat()" class="text-xs text-slate-400 hover:text-slate-200" style="background: none; border: none; cursor: pointer;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    mobileMenuToggle.addEventListener('click', function() {
+      mobileNav.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    function closeMobileMenu() {
+      mobileNav.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+
+    // Newsletter form
+    function handleNewsletterSubmit(event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('newsletterEmail');
+      const submitBtn = document.getElementById('newsletterSubmit');
+      const messageEl = document.getElementById('newsletterMessage');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get updates';
+        emailInput.value = '';
+        messageEl.textContent = "Thank you — you're on the list.";
+        messageEl.className = 'newsletter-message success';
+        messageEl.classList.remove('hidden');
+        
+        setTimeout(() => {
+          messageEl.classList.add('hidden');
+        }, 5000);
+      }, 600);
+    }
+
+    // Copy email function
+    function copyEmail() {
+      const email = 'hello@jackofai.com';
+      const copyBtn = document.getElementById('copyEmailBtn');
+      const copyText = document.getElementById('copyText');
+      const copyIcon = document.getElementById('copyIcon');
+      
+      navigator.clipboard.writeText(email).then(() => {
+        copyText.textContent = 'Copied!';
+        copyBtn.classList.add('copied');
+        copyIcon.innerHTML = '<path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+        
+        setTimeout(() => {
+          copyText.textContent = 'Copy Email';
+          copyBtn.classList.remove('copied');
+          copyIcon.innerHTML = '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>';
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy email:', err);
+      });
+    }
+
+    // Founder chat modal
+    function openFounderChat() {
+      document.getElementById('founderChatModal').classList.add('active');
+    }
+
+    function closeFounderChat(event) {
+      if (event && event.target !== event.currentTarget) return;
+      document.getElementById('founderChatModal').classList.remove('active');
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
