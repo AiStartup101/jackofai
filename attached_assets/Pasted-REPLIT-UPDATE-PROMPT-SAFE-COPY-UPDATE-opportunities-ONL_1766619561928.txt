@@ -1,0 +1,69 @@
+REPLIT UPDATE PROMPT (SAFE COPY UPDATE — /opportunities ONLY)
+
+Goal:
+Update ONLY the /opportunities page copy to better align with the new JackofAI positioning (calm consumer product company), WITHOUT breaking routes, deployment, domain, navigation, styles, or any existing links.
+
+Hard rules:
+- DO NOT change any routing, filenames, or folder structure.
+- DO NOT rename the /opportunities route or remove the “Back to home” link.
+- DO NOT modify next.config.js, package.json, build scripts, environment variables, or deployment settings.
+- DO NOT change global layout components (Header/Footer) unless the /opportunities page imports them locally.
+- DO NOT remove any existing sections/cards; only adjust copy and optionally add ONE short line near the top.
+- Keep all existing Tailwind classes and component structure; only change text strings.
+- Keep email address and any contact links exactly as currently implemented.
+
+Scope:
+- Edit only the file that renders /opportunities:
+  - Next.js App Router: app/opportunities/page.tsx
+  - or Pages Router: pages/opportunities.tsx
+  - or equivalent route file currently used.
+If you cannot find it quickly, search for the H1 text “Opportunities at JackofAI”.
+
+Changes to implement (copy only):
+
+1) Add a single positioning anchor line directly under the H1 heading:
+Add this sentence as a short paragraph (same style as existing subtext, slightly lighter than the H1):
+“JackofAI is a calm consumer product company building warm, human-centred AI apps.”
+
+2) Update the intro paragraph (keep meaning; minor tighten):
+Current concept: “We’re not a traditional hiring pipeline…”
+Keep it, but ensure it reads as:
+“We’re not a traditional hiring pipeline. We’re building a small network of people who enjoy crafting thoughtful digital products — and we collaborate in flexible, project-based ways.”
+
+3) Update “For builders & creators” opening line:
+Replace:
+“Ideal if you like turning ideas into working products and experiences:”
+With:
+“Ideal if you enjoy turning thoughtful ideas into calm, human-centred products:”
+
+4) Update “For experts & advisors” first sentence:
+Replace:
+“We welcome conversations with people experienced in…”
+With:
+“We welcome thoughtful conversations with people experienced in…”
+
+5) Update “For investors & strategic partners” first sentence (soft de-emphasis):
+Replace:
+“We’re open to thoughtful early conversations with…”
+With:
+“We’re open to select, thoughtful early conversations with…”
+
+6) Add one expectation-setting line in “How to reach us” section BEFORE the bullet list:
+Add:
+“We read every message, but respond selectively to conversations that feel aligned.”
+
+Do NOT change:
+- The “CURRENT PRIORITY NEEDS” list items (keep as-is).
+- Any bullet lists of roles/categories other than the specific opening lines above.
+- The email line: “Email: hello@jackofai.com”
+- Footer copyright line.
+
+After making changes:
+- Run the site and confirm /opportunities renders with no errors.
+- Confirm mobile layout is unchanged (no overflow, no broken spacing).
+- Confirm “Back to home” works.
+- Confirm email link remains correct.
+- Run build/typecheck if available and fix any TS/ESLint issues caused by formatting.
+
+Deliverable:
+Commit the minimal text-only edits for /opportunities, leaving everything else untouched.

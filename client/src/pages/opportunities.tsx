@@ -10,9 +10,12 @@ export default function OpportunitiesPage() {
 
         <header className="space-y-3">
           <h1 className="text-3xl font-bold text-white" data-testid="opportunities-title">Opportunities at JackofAI</h1>
+          <p className="text-slate-400">
+            JackofAI is a calm consumer product company building warm, human-centred AI apps.
+          </p>
           <p className="text-slate-300">
             We're not a traditional hiring pipeline. We're building a small network of people who enjoy crafting 
-            thoughtful digital products – and we collaborate in flexible, project-based ways.
+            thoughtful digital products — and we collaborate in flexible, project-based ways.
           </p>
         </header>
 
@@ -36,7 +39,7 @@ export default function OpportunitiesPage() {
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-white">For builders & creators</h2>
           <p className="text-slate-300">
-            Ideal if you like turning ideas into working products and experiences:
+            Ideal if you enjoy turning thoughtful ideas into calm, human-centred products:
           </p>
           <ul className="list-disc pl-6 space-y-2 text-slate-200 text-sm">
             <li>App developers (React Native, Next.js, full-stack).</li>
@@ -49,7 +52,7 @@ export default function OpportunitiesPage() {
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-white">For experts & advisors</h2>
           <p className="text-slate-300">
-            We welcome conversations with people experienced in consumer technology, AI-assisted products, 
+            We welcome thoughtful conversations with people experienced in consumer technology, AI-assisted products, 
             digital wellbeing, behaviour design, and intellectual property for software and apps.
           </p>
         </section>
@@ -57,13 +60,16 @@ export default function OpportunitiesPage() {
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-white">For investors & strategic partners</h2>
           <p className="text-slate-300">
-            We're open to thoughtful early conversations with angels, operators, and partners who understand 
+            We're open to select, thoughtful early conversations with angels, operators, and partners who understand 
             calm consumer apps and brand-led product building.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-2xl font-semibold text-white">How to reach us</h2>
+          <p className="text-slate-300">
+            We read every message, but respond selectively to conversations that feel aligned.
+          </p>
           <p className="text-slate-300">
             If you'd like to explore working together, please email a short note with:
           </p>
