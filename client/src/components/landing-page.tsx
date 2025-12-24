@@ -75,19 +75,8 @@ function SecondaryButton({
   );
 }
 
-const currentNeeds = [
-  "React Native developer (short sprint)",
-  "Next.js frontend collaborator",
-  "UI/UX designer for calm mobile apps",
-  "Instagram & Reels collaborator",
-  "YouTube shorts / video editor",
-  "IP / patent advisor (apps & AI)",
-  "Early adopters for ChristmasPulse & FamilyPulse testing"
-];
-
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isFounderChatOpen, setIsFounderChatOpen] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -118,7 +107,7 @@ export default function LandingPage() {
               data-testid="brand-logo"
             />
             <span className="text-[10px] md:text-xs text-slate-400 tracking-wide">
-              Warm, simple AI products
+              Warm AI for real life
             </span>
           </a>
 
@@ -126,10 +115,7 @@ export default function LandingPage() {
             <a href="#products" className="hover:text-sky-300">
               Products
             </a>
-            <a href="#talent" className="hover:text-sky-300">
-              Talent
-            </a>
-            <a href="/early-access" className="hover:text-sky-300">
+            <a href="#early-access" className="hover:text-sky-300">
               Early Access
             </a>
             <a href="/about" className="hover:text-sky-300">
@@ -154,10 +140,7 @@ export default function LandingPage() {
             <a href="#products" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
               Products
             </a>
-            <a href="#talent" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
-              Talent
-            </a>
-            <a href="/early-access" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
+            <a href="#early-access" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
               Early Access
             </a>
             <a href="/about" className="block hover:text-sky-300" onClick={() => setMobileMenuOpen(false)}>
@@ -169,357 +152,184 @@ export default function LandingPage() {
           </nav>
         )}
 
-        <AnimatedSection className="grid gap-10 md:grid-cols-[minmax(0,3fr),minmax(0,2fr)] items-center" data-testid="hero-section">
-          <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-300/80">
-              JackofAI<span className="align-super text-[10px]">™</span> Studio
-            </p>
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight" data-testid="hero-title">
-              We build{" "}
-              <span className="gradient-text">warm, simple AI apps</span>{" "}
-              that bring people closer.
-            </h1>
-            <p className="max-w-xl text-base md:text-lg text-slate-300" data-testid="hero-description">
-              JackofAI™ is a creative technology studio shaping meaningful
-              digital experiences — starting with ChristmasPulse and
-              FamilyPulse.
-            </p>
-            <p className="text-slate-300 text-sm sm:text-base">
-              We focus on small, calm products that support reflection, celebration, and everyday connection – not more noise.
-            </p>
+        {/* HERO SECTION */}
+        <AnimatedSection className="max-w-3xl space-y-6" data-testid="hero-section">
+          <h1 className="text-4xl md:text-6xl font-semibold leading-tight" data-testid="hero-title">
+            <span className="gradient-text">Warm AI for real life.</span>
+          </h1>
+          <p className="text-base md:text-lg text-slate-300" data-testid="hero-description">
+            JackofAI builds calm, consumer AI products designed around everyday human moments — not productivity, not noise, not feeds.
+          </p>
+          <p className="text-base md:text-lg text-slate-300">
+            We start with celebration and family connection. We build slowly, thoughtfully, and with care.
+          </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <PrimaryButton href="#products">
-                Explore ChristmasPulse
-              </PrimaryButton>
-              <SecondaryButton href="#products">
-                Explore FamilyPulse
-              </SecondaryButton>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-4 text-sm text-slate-400">
-              <SecondaryButton href="#early-adopters">
-                Join Early Access
-              </SecondaryButton>
-              <SecondaryButton href="#talent">
-                Work With Us
-              </SecondaryButton>
-            </div>
-          </div>
-
-          <div className="glass-card p-6 md:p-7 space-y-5" data-testid="product-teaser-card">
-            <p className="text-sm font-medium text-sky-300 uppercase tracking-[0.2em]">
-              Coming Soon
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-base font-semibold text-slate-100">
-                  ChristmasPulse
-                </span>
-                <span className="rounded-full bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-300">
-                  Festive app
-                </span>
-              </div>
-              <p className="text-sm text-slate-300">
-                A joyful digital experience designed to help people create warm,
-                heartfelt Christmas moments — cards, messages, and shared
-                memories made easy.
-              </p>
-            </div>
-
-            <div className="h-px bg-gradient-to-r from-sky-500/40 via-slate-500/20 to-rose-400/40" />
-
-            <div className="space-y-3">
-              <div className="flex items-center justify-between gap-2">
-                <span className="text-base font-semibold text-slate-100">
-                  FamilyPulse
-                </span>
-                <span className="rounded-full bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-300">
-                  Family app
-                </span>
-              </div>
-              <p className="text-sm text-slate-300">
-                A simple, calming app focused on supporting everyday emotional
-                connection within families — gentle reflection, communication,
-                and togetherness.
-              </p>
-            </div>
-
-            <div className="pt-3 text-xs text-slate-400">
-              Both products are currently in development. Join as an early
-              adopter, collaborator, or supporter.
-            </div>
+          <div className="flex flex-wrap items-center gap-3 pt-4">
+            <PrimaryButton href="#products">
+              Explore our products
+            </PrimaryButton>
+            <SecondaryButton href="#early-access">
+              Join early access
+            </SecondaryButton>
           </div>
         </AnimatedSection>
 
-        <AnimatedSection className="space-y-4" data-testid="newsletter-section">
-          <NewsletterSignup />
+        {/* WHAT JACKOFAI IS */}
+        <AnimatedSection className="space-y-4" data-testid="what-section">
+          <h2 className="text-xl md:text-3xl font-semibold">
+            What JackofAI is
+          </h2>
+          <div className="glass-card p-6 md:p-7 space-y-4">
+            <p className="text-base md:text-lg text-slate-300">
+              JackofAI is a consumer product company.
+            </p>
+            <p className="text-base text-slate-300">
+              We design and ship small, focused apps that feel human, emotionally clear, and easy to return to.
+            </p>
+            <p className="text-base text-slate-300">
+              AI is present, but never the point. The experience always comes first.
+            </p>
+          </div>
         </AnimatedSection>
 
+        {/* OUR PRODUCTS */}
         <AnimatedSection id="products" className="space-y-6" data-testid="products-section">
           <h2 className="text-xl md:text-3xl font-semibold">
-            Our upcoming apps
+            Our products
           </h2>
-          <p className="max-w-2xl text-base text-slate-300">
-            We're starting with two focused experiences: one for Christmas
-            joy, and one for quiet everyday connection at home.
-          </p>
 
           <div className="grid gap-6 md:grid-cols-2">
             <div className="glass-card p-6 space-y-4" data-testid="card-christmaspulse">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl">🎄</span>
-                  <div>
-                    <h3 className="text-lg font-semibold">
-                      ChristmasPulse — Coming Soon
-                    </h3>
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
-                      Festive, warm, creative
-                    </p>
-                  </div>
-                </div>
-                <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
-                  Coming soon
-                </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">🎄</span>
+                <h3 className="text-lg font-semibold">ChristmasPulse</h3>
               </div>
               <p className="text-base text-slate-300">
-                A joyful digital experience designed to help people create warm,
-                heartfelt Christmas moments — cards, messages, and shared
-                memories made easy.
+                A warm, festive app for creating and sharing meaningful Christmas moments — cards, messages, and simple creative expressions.
               </p>
-              <div className="flex flex-wrap gap-3 pt-2">
+              <p className="text-sm text-slate-400">
+                Designed to feel joyful, personal, and calm.
+              </p>
+              <div className="pt-2">
                 <PrimaryButton href="https://christmaspulse.com">
-                  Visit ChristmasPulse.com
+                  Visit ChristmasPulse
                 </PrimaryButton>
-                <SecondaryButton href="#early-adopters">
-                  Join waitlist
-                </SecondaryButton>
               </div>
             </div>
 
             <div className="glass-card p-6 space-y-4" data-testid="card-familypulse">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl">❤️</span>
-                  <div>
-                    <h3 className="text-lg font-semibold">
-                      FamilyPulse — Coming Soon
-                    </h3>
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
-                      Calm, daily, grounded
-                    </p>
-                  </div>
-                </div>
-                <span className="rounded-full bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-300">
-                  Coming soon
-                </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">❤️</span>
+                <h3 className="text-lg font-semibold">FamilyPulse</h3>
               </div>
               <p className="text-base text-slate-300">
-                A simple, calming app focused on supporting everyday emotional
-                connection within families — gentle reflection, communication,
-                and togetherness.
+                A gentle app for everyday emotional connection within families — reflection, communication, and togetherness without pressure.
               </p>
-              <div className="flex flex-wrap gap-3 pt-2">
+              <p className="text-sm text-slate-400">
+                Designed for presence, not performance.
+              </p>
+              <div className="pt-2">
                 <PrimaryButton href="https://familypulse.live">
-                  Visit FamilyPulse.live
+                  Visit FamilyPulse
                 </PrimaryButton>
-                <SecondaryButton href="#early-adopters">
-                  Join waitlist
-                </SecondaryButton>
               </div>
             </div>
           </div>
         </AnimatedSection>
 
+        {/* OUR POINT OF VIEW */}
         <AnimatedSection className="space-y-4" data-testid="philosophy-section">
           <h2 className="text-xl md:text-3xl font-semibold">
-            Our philosophy
+            Our point of view
           </h2>
           <div className="glass-card p-6 md:p-7 space-y-4">
-            <p className="text-base md:text-lg font-medium">
-              Technology feels best when it feels human.
+            <p className="text-base md:text-lg font-medium text-slate-100">
+              Technology works best when it stays in the background.
             </p>
             <p className="text-base text-slate-300">
-              We believe digital products should make life warmer — not louder.
-              That's why we build small, simple apps with emotional clarity
-              and thoughtful design at their core.
+              We believe people don't need more apps — they need better ones. Calm is a feature. Emotional clarity matters more than feature depth.
             </p>
-            <div className="grid gap-4 md:grid-cols-3 text-base">
-              <div>
-                <p className="font-semibold text-slate-100">Warm design</p>
-                <p className="text-slate-300 text-sm mt-1">
-                  Intuitive, human, emotionally grounded experiences that feel
-                  calm rather than overwhelming.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-slate-100">
-                  Simple experiences
-                </p>
-                <p className="text-slate-300 text-sm mt-1">
-                  Tiny apps with meaningful moments — focused, deliberate, and
-                  easy to return to.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold text-slate-100">
-                  Real connection
-                </p>
-                <p className="text-slate-300 text-sm mt-1">
-                  Tools that bring people closer every day, rather than pulling
-                  attention away from what matters.
-                </p>
-              </div>
-            </div>
+            <p className="text-base text-slate-300">
+              So we build products that are intentionally small, emotionally grounded, and designed to support real life — not replace it.
+            </p>
           </div>
         </AnimatedSection>
 
-        <AnimatedSection id="talent" className="space-y-4" data-testid="talent-section">
+        {/* HOW WE BUILD */}
+        <AnimatedSection className="space-y-4" data-testid="how-we-build-section">
           <h2 className="text-xl md:text-3xl font-semibold">
-            Work with us: talent & collaborators
+            How we build
           </h2>
-          <p className="text-base text-slate-300">
-            We're growing a small, intentional network of people who enjoy creating simple, human-centered digital products. 
-            Whether you build, design, advise, invest, or test early ideas — we'd love to connect.
-          </p>
-
-          {/* Current Priority Needs Strip */}
-          <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-3" data-testid="current-needs-strip">
-            <div className="flex items-center gap-2 text-xs font-medium text-slate-200 uppercase tracking-wide">
-              <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Current priority needs</span>
+          <div className="glass-card p-6 md:p-7 space-y-4">
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-sky-300 mt-1">•</span>
+                <div>
+                  <p className="font-semibold text-slate-100">Warm design</p>
+                  <p className="text-slate-300 text-sm">Interfaces feel human, intuitive, and emotionally considerate.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-sky-300 mt-1">•</span>
+                <div>
+                  <p className="font-semibold text-slate-100">Simple experiences</p>
+                  <p className="text-slate-300 text-sm">Fewer features. Clear intent. Easy to return to.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-sky-300 mt-1">•</span>
+                <div>
+                  <p className="font-semibold text-slate-100">Real connection</p>
+                  <p className="text-slate-300 text-sm">Technology should bring people closer, not compete for attention.</p>
+                </div>
+              </div>
             </div>
-            <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-200">
-              {currentNeeds.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/15 bg-white/5 px-3 py-1 backdrop-blur-sm hover:border-sky-400 hover:text-sky-200 transition"
-                  data-testid={`need-pill-${item.slice(0, 15).replace(/\s/g, "-").toLowerCase()}`}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            {/* Card 1 – Builders & creators */}
-            <div className="glass-card p-5 space-y-3">
-              <h3 className="text-lg font-semibold text-slate-100">For builders & creators</h3>
-              <p className="text-sm text-slate-300">
-                Ideal if you like designing or building real products.
-              </p>
-              <ul className="text-sm text-slate-300 space-y-1">
-                <li>• App developers (React Native, Next.js, full-stack)</li>
-                <li>• UI/UX designers for clean mobile experiences</li>
-                <li>• Motion, illustration, video & content creators</li>
-                <li>• Social media creators & marketers</li>
-              </ul>
-            </div>
-
-            {/* Card 2 – Experts & advisors */}
-            <div className="glass-card p-5 space-y-3">
-              <h3 className="text-lg font-semibold text-slate-100">For experts & advisors</h3>
-              <p className="text-sm text-slate-300">
-                Ideal if you bring experience in technology, behaviour, or law and enjoy guiding early-stage work.
-              </p>
-              <ul className="text-sm text-slate-300 space-y-1">
-                <li>• Consumer tech, AI or mobile product specialists</li>
-                <li>• Digital wellbeing / behavioural design experts</li>
-                <li>• Intellectual property & tech / apps / AI legal advisors</li>
-                <li>• Product, brand or growth advisors</li>
-              </ul>
-              <p className="text-xs text-slate-400">
-                We don't discuss sensitive or unprotected details publicly — deeper conversations happen privately and, if needed, under NDA.
-              </p>
-            </div>
-
-            {/* Card 3 – Investors & strategic partners */}
-            <div className="glass-card p-5 space-y-3">
-              <h3 className="text-lg font-semibold text-slate-100">For investors & strategic partners</h3>
-              <p className="text-sm text-slate-300">
-                Ideal if you're interested in early-stage consumer technology and calm, human-first digital products.
-              </p>
-              <ul className="text-sm text-slate-300 space-y-1">
-                <li>• Angels and early-stage investors</li>
-                <li>• Operators with app or consumer tech experience</li>
-                <li>• Strategic partners in design, distribution or growth</li>
-              </ul>
-            </div>
-
-            {/* Card 4 – Early adopters & supporters */}
-            <div className="glass-card p-5 space-y-3">
-              <h3 className="text-lg font-semibold text-slate-100">For early adopters & supporters</h3>
-              <p className="text-sm text-slate-300">
-                Ideal if you enjoy trying early products and shaping them with honest feedback.
-              </p>
-              <ul className="text-sm text-slate-300 space-y-1">
-                <li>• Test prototypes and new features</li>
-                <li>• Share feedback on design and experience</li>
-                <li>• Help us prioritise what really matters</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Shared call-to-action */}
-          <div className="glass-card p-5 space-y-3">
-            <p className="text-base text-slate-300">
-              If you'd like to collaborate in any way, please share:
+            <p className="text-sm text-slate-400 pt-2 border-t border-white/10">
+              These aren't brand values. They're design constraints.
             </p>
-            <ul className="text-sm text-slate-300 space-y-1">
-              <li>• Your name & short bio</li>
-              <li>• Your role or specialty</li>
-              <li>• A brief overview of your experience</li>
-              <li>• Links to your work (GitHub, portfolio, Instagram, YouTube, LinkedIn, etc.)</li>
-              <li>• The type of collaboration you're exploring</li>
-            </ul>
-            <div className="flex flex-wrap gap-3 pt-2">
-              <PrimaryButton href="mailto:hello@jackofai.com?subject=Collaboration%20Inquiry">
-                Email us
-              </PrimaryButton>
-              <button
-                onClick={() => setIsFounderChatOpen(true)}
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-slate-100 hover:bg-white/5 transition-colors"
-                data-testid="talent-chat-founder-btn"
-              >
-                Chat with the Founder
-              </button>
-            </div>
           </div>
         </AnimatedSection>
 
+        {/* A NOTE FROM THE FOUNDER */}
         <AnimatedSection id="founder" className="space-y-4" data-testid="founder-section">
           <h2 className="text-xl md:text-3xl font-semibold">
             A note from the founder
           </h2>
           <div className="glass-card p-6 md:p-7 space-y-4">
             <p className="text-base text-slate-300">
-              I started JackofAI™ to build simple, warm digital tools that help
-              people feel more connected — to themselves, to their families, and
-              to the moments that matter.
+              I started JackofAI to build the kind of products I wanted to exist — tools that feel calm, human, and respectful of people's lives.
             </p>
             <p className="text-base text-slate-300">
-              The world doesn't need more complex apps. It needs softer,
-              calmer, more human technology.
+              The world doesn't need louder technology. It needs technology that knows when to step back.
             </p>
             <p className="text-base text-slate-300">
-              If our mission resonates with you — whether you're a
-              creator, collaborator, investor, or early supporter — I'd
-              love to connect.
+              If what we're building resonates with you, you're welcome to follow along.
             </p>
             <p className="text-base font-medium text-slate-100" data-testid="founder-name">— Bhavik Patel</p>
           </div>
         </AnimatedSection>
 
+        {/* EARLY ACCESS */}
+        <AnimatedSection id="early-access" className="space-y-4" data-testid="early-access-section">
+          <h2 className="text-xl md:text-3xl font-semibold">
+            Early access
+          </h2>
+          <div className="glass-card p-6 md:p-7 space-y-4">
+            <p className="text-base text-slate-300">
+              Our products are developed carefully and released gradually. Join for updates and early access invites.
+            </p>
+            <NewsletterSignup />
+          </div>
+        </AnimatedSection>
+
+        {/* CONTACT */}
         <AnimatedSection id="contact" className="space-y-4" data-testid="contact-section">
           <h2 className="text-xl md:text-3xl font-semibold">
             Contact
           </h2>
           <div className="glass-card p-6 md:p-7 space-y-4 text-base text-slate-300">
             <p>
-              For collaborations, talent opportunities, early access, or investor conversations,
-              you can reach JackofAI™ here:
+              For early access, collaborations, or investor conversations:
             </p>
             <div className="space-y-1 text-slate-100">
               <p>
@@ -547,6 +357,10 @@ export default function LandingPage() {
                 </a>
               </p>
             </div>
+
+            <p className="text-sm text-slate-400">
+              If you'd like to collaborate, <a href="/opportunities" className="text-sky-300 hover:text-sky-200">view opportunities</a>.
+            </p>
 
             {/* Social Links */}
             <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
@@ -593,9 +407,6 @@ export default function LandingPage() {
               <SecondaryButton href="mailto:hello@jackofai.com">
                 Email JackofAI
               </SecondaryButton>
-              <SecondaryButton href="https://wa.me/61426996009">
-                Chat on WhatsApp
-              </SecondaryButton>
               <button
                 onClick={copyEmail}
                 className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-base font-semibold text-slate-100 hover:bg-white/5 transition-colors"
@@ -634,7 +445,7 @@ export default function LandingPage() {
             <div className="flex flex-wrap gap-5 text-sm font-medium text-slate-200">
               <a href="/" className="hover:text-sky-300 transition-colors">Home</a>
               <a href="#products" className="hover:text-sky-300 transition-colors">Products</a>
-              <a href="#talent" className="hover:text-sky-300 transition-colors">Talent</a>
+              <a href="#early-access" className="hover:text-sky-300 transition-colors">Early Access</a>
               <a href="#contact" className="hover:text-sky-300 transition-colors">Contact</a>
             </div>
           </div>
@@ -642,7 +453,6 @@ export default function LandingPage() {
           <div className="flex flex-wrap gap-5 text-sm text-slate-300">
             <a href="/about" className="hover:text-sky-300 transition-colors">About</a>
             <a href="/opportunities" className="hover:text-sky-300 transition-colors">Opportunities</a>
-            <a href="/early-access" className="hover:text-sky-300 transition-colors">Early Access</a>
             <a href="/founder" className="hover:text-sky-300 transition-colors">Founder</a>
             <a href="/press" className="hover:text-sky-300 transition-colors">Press</a>
           </div>
@@ -658,93 +468,14 @@ export default function LandingPage() {
 
       <a
         href="https://wa.me/61426996009"
-        className="fixed bottom-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/40 hover:bg-emerald-300 transition-colors"
+        className="fixed bottom-6 right-6 z-20 inline-flex items-center justify-center rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-slate-300 hover:bg-white/15 transition-colors"
         aria-label="Chat on WhatsApp"
         target="_blank"
         rel="noreferrer"
         data-testid="whatsapp-floating-btn"
       >
-        💬 Chat on WhatsApp
+        💬 WhatsApp
       </a>
-
-      {isFounderChatOpen && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur-sm" data-testid="founder-chat-modal">
-          <div className="glass-card max-w-md w-full mx-4 p-6 space-y-4 relative">
-            <button
-              onClick={() => setIsFounderChatOpen(false)}
-              className="absolute right-4 top-4 text-slate-400 hover:text-slate-200 text-sm"
-              aria-label="Close founder chat"
-              data-testid="founder-chat-close-btn"
-            >
-              ✕
-            </button>
-
-            <h2 className="text-xl font-semibold text-slate-100">
-              Chat with the founder
-            </h2>
-
-            <p className="text-base text-slate-300">
-              Hi, I'm Bhavik. I started JackofAI™ to build simple, warm digital tools
-              that help people feel more connected. I'd love to hear who you are and
-              how you'd like to be involved — as a collaborator, early adopter, or
-              investor.
-            </p>
-
-            <div className="space-y-2 text-base text-slate-100">
-              <p>
-                <span className="font-semibold">WhatsApp: </span>
-                <a
-                  href="https://wa.me/61426996009?text=Hi%20Bhavik%2C%20I%20just%20visited%20JackofAI.com%20and%20would%20love%20to%20connect."
-                  className="text-sky-300 hover:text-sky-200"
-                  target="_blank"
-                  rel="noreferrer"
-                  data-testid="founder-modal-whatsapp"
-                >
-                  Chat on WhatsApp
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold">Phone: </span>
-                <a
-                  href="tel:+61426996009"
-                  className="text-sky-300 hover:text-sky-200"
-                  data-testid="founder-modal-phone"
-                >
-                  +61 426 996 009
-                </a>
-              </p>
-              <p>
-                <span className="font-semibold">Email: </span>
-                <a
-                  href="mailto:hello@jackofai.com?subject=JackofAI%20Founder%20Chat"
-                  className="text-sky-300 hover:text-sky-200"
-                  data-testid="founder-modal-email"
-                >
-                  hello@jackofai.com
-                </a>
-              </p>
-            </div>
-
-            <div className="pt-2 border-t border-white/10 mt-2">
-              <p className="text-xs text-slate-400">
-                Tip: When you reach out, feel free to mention whether you're a
-                developer, designer, early adopter, or investor, and what you'd like
-                to explore together.
-              </p>
-            </div>
-
-            <div className="flex justify-end pt-2">
-              <button
-                onClick={() => setIsFounderChatOpen(false)}
-                className="text-xs text-slate-400 hover:text-slate-200"
-                data-testid="founder-chat-close-text-btn"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }

@@ -1,0 +1,112 @@
+REPLIT UPDATE PROMPT (SAFE COPY UPDATE — DO NOT BREAK SITE)
+
+Goal:
+Update JackofAI.com homepage copy + section structure to the new positioning (provided below), WITHOUT breaking routing, deployment, domain, nav links, existing forms, or “website connection”. Do NOT change hosting/DNS settings. Do NOT remove any existing pages or API routes. Only edit UI content/components.
+
+Hard rules:
+- Do NOT modify next.config, package.json, build scripts, DNS, domain settings, or deployment configs.
+- Do NOT rename routes/pages (keep /, /products, /contact, etc. exactly as they are).
+- Do NOT remove existing signup/early-access form logic or API endpoints (keep them working).
+- Do NOT remove existing “Join Early Access” functionality—keep the same form component and endpoint; only adjust heading/subcopy.
+- Keep existing header/nav, footer links, privacy/terms pages intact.
+- Keep styling system (Tailwind/classes) intact; reuse existing components where possible.
+- If there is a WhatsApp floating button widget, keep it enabled, but move it lower priority visually (do not show as a primary hero CTA).
+
+What to change:
+1) HOMEPAGE (route: / or app/page.tsx or pages/index.tsx)
+- Replace hero + intro sections with new “Warm AI for real life” positioning.
+- Reduce CTA clutter in hero: keep ONE primary CTA (“Explore our products”) that scrolls to products section. Keep “Join early access” as secondary below.
+- Keep both product cards (ChristmasPulse, FamilyPulse) with single primary button each (“Visit ChristmasPulse”, “Visit FamilyPulse”). Keep existing external URLs exactly as currently implemented.
+- Add a concise “Our point of view” section (philosophy) + “How we build” with 3 bullets.
+- Keep Founder Note section but replace copy with the new founder note below.
+- Keep Early Access section and form; update its headline/subcopy only.
+
+2) PRODUCTS SECTION
+- Ensure “Our products” section is above philosophy.
+- Remove repeated “Coming soon” clutter (only show “Coming soon” badge once per product if you already have it; otherwise omit).
+
+3) COLLABORATORS / WORK WITH US
+- If the homepage currently contains a long “Work with us: talent & collaborators” block, do NOT delete the page/route that hosts it.
+- On the homepage, either:
+  (A) remove that long block from homepage and replace with one small line under Contact: “If you’d like to collaborate, reach out.” linking to existing /talent or /opportunities page, OR
+  (B) collapse it into an accordion with a single summary line and a “Learn more” link.
+Choose the option that requires the least code change.
+
+4) FOOTER / CONTACT
+- Keep contact details and footer links exactly. Do not remove legal links.
+
+New homepage copy (use exactly, with minor formatting to fit existing UI):
+
+HERO
+Title: “Warm AI for real life.”
+Body:
+“JackofAI builds calm, consumer AI products designed around everyday human moments — not productivity, not noise, not feeds.
+We start with celebration and family connection. We build slowly, thoughtfully, and with care.”
+Primary CTA button: “Explore our products” (scrolls to products section id="products")
+Secondary CTA: “Join early access” (scrolls to id="early-access" where the existing form lives)
+
+SECTION: WHAT JACKOFAI IS
+Heading: “What JackofAI is”
+Body:
+“JackofAI is a consumer product company.
+We design and ship small, focused apps that feel human, emotionally clear, and easy to return to.
+AI is present, but never the point. The experience always comes first.”
+
+SECTION: OUR PRODUCTS (anchor id="products")
+ChristmasPulse card:
+Title: “ChristmasPulse”
+Body:
+“A warm, festive app for creating and sharing meaningful Christmas moments — cards, messages, and simple creative expressions.
+Designed to feel joyful, personal, and calm.”
+Button: “Visit ChristmasPulse” (use existing link)
+
+FamilyPulse card:
+Title: “FamilyPulse”
+Body:
+“A gentle app for everyday emotional connection within families — reflection, communication, and togetherness without pressure.
+Designed for presence, not performance.”
+Button: “Visit FamilyPulse” (use existing link)
+
+SECTION: OUR POINT OF VIEW
+Heading: “Our point of view”
+Body:
+“Technology works best when it stays in the background.
+We believe people don’t need more apps — they need better ones. Calm is a feature. Emotional clarity matters more than feature depth.
+So we build products that are intentionally small, emotionally grounded, and designed to support real life — not replace it.”
+
+SECTION: HOW WE BUILD
+Heading: “How we build”
+Bullets:
+- “Warm design — Interfaces feel human, intuitive, and emotionally considerate.”
+- “Simple experiences — Fewer features. Clear intent. Easy to return to.”
+- “Real connection — Technology should bring people closer, not compete for attention.”
+Closing line:
+“These aren’t brand values. They’re design constraints.”
+
+SECTION: A NOTE FROM THE FOUNDER
+Heading: “A note from the founder”
+Body:
+“I started JackofAI to build the kind of products I wanted to exist — tools that feel calm, human, and respectful of people’s lives.
+The world doesn’t need louder technology. It needs technology that knows when to step back.
+If what we’re building resonates with you, you’re welcome to follow along.”
+Signature: “— Bhavik Patel”
+
+SECTION: EARLY ACCESS (anchor id="early-access")
+Heading: “Early access”
+Subcopy:
+“Our products are developed carefully and released gradually. Join for updates and early access invites.”
+(Keep the existing email form + submit button + backend wiring unchanged.)
+
+Implementation notes:
+- Add section anchors (products, early-access) via ids on the relevant containers.
+- Keep typography scale similar; do not introduce new fonts.
+- Preserve mobile spacing and avoid adding too many new components—use existing Card/Section components.
+- After changes, run typecheck/build locally in Replit and fix any TS/ESLint errors.
+- Confirm that:
+  - Homepage loads without errors
+  - Product buttons still open the right URLs
+  - Early access form still submits successfully
+  - No routes were broken
+
+Deliverable:
+A single PR-style commit in the Replit workspace applying the copy/structure updates while keeping the site fully functional.
