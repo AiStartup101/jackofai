@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JackOfAI Static HTML Website
 
 This is a standalone HTML version of the JackOfAI website, converted from the React application.
@@ -36,3 +37,6 @@ The website includes:
 - Email links use `mailto:` protocol
 - WhatsApp links open in WhatsApp app/web
 
+=======
+Updated on Replit on Dec 27
+>>>>>>> 092fa70 (Update README from Replit)
